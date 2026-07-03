@@ -179,7 +179,8 @@
       "success": "Thank you — we'll be in touch within one business day.",
       "error": "Something went wrong. Please try again or WhatsApp us.",
       "required": "This field is required",
-      "invalidEmail": "Please enter a valid email"
+      "invalidEmail": "Please enter a valid email",
+      "mailtoFallback": "Your email app should open — please hit send to reach us. You can also WhatsApp us directly."
     }
   },
   "Consent": {
@@ -187,5 +188,98 @@
     "accept": "Accept",
     "decline": "Decline",
     "privacy": "Privacy Policy"
+  },
+  "Legal": {
+    "eyebrow": "Legal",
+    "updated": "Last updated",
+    "updatedDate": "4 July 2026",
+    "provisionalNote": "These notices are being finalised and are provided for information. For formal documentation, please contact sales@granitopia.com.",
+    "reviewNote": "This is a working draft pending professional legal review.",
+    "impressum": {
+      "title": "Impressum",
+      "intro": "Provider identification pursuant to § 5 DDG and § 18 MStV (Germany), and general company information.",
+      "sections": [
+        {
+          "heading": "Provider",
+          "body": "Granitopia Stones International LLP\nA Limited Liability Partnership registered in India.\nRegistered office: Bengaluru, Karnataka, India (full postal address on request)."
+        },
+        {
+          "heading": "Contact",
+          "body": "Email: sales@granitopia.com\nPhone / WhatsApp: +91 799 699 6655"
+        },
+        {
+          "heading": "Registration",
+          "body": "LLP Identification Number (LLPIN): available on request.\nGST Identification Number (GSTIN): available on request."
+        },
+        {
+          "heading": "Represented by",
+          "body": "The Designated Partners of the LLP (details on request)."
+        },
+        {
+          "heading": "Responsible for content (§ 18 (2) MStV)",
+          "body": "As per the provider details stated above."
+        },
+        {
+          "heading": "Liability for content",
+          "body": "We prepare the content of this site with care, but assume no liability for its accuracy, completeness or timeliness. As a service provider we are responsible for our own content under general law; we are not obliged to monitor transmitted or stored third-party information."
+        },
+        {
+          "heading": "Liability for links",
+          "body": "This site may contain links to external websites over which we have no control. We accept no liability for their content; the respective operator is responsible."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "How we handle your personal data when you use this website, in line with the EU General Data Protection Regulation (GDPR) and India's Digital Personal Data Protection Act, 2023 (DPDP).",
+      "sections": [
+        {
+          "heading": "Controller",
+          "body": "Granitopia Stones International LLP, Bengaluru, India.\nContact: sales@granitopia.com."
+        },
+        {
+          "heading": "Data we collect",
+          "body": "When you submit the enquiry form: your name, email and country, and optionally your phone, the stone of interest and your message. If you consent, we collect anonymous, privacy-friendly traffic statistics (Vercel Analytics). We do not use advertising cookies or profiling."
+        },
+        {
+          "heading": "Purpose and legal basis",
+          "body": "We use enquiry data to respond and prepare a possible quotation — Art. 6(1)(b) GDPR (pre-contractual steps) and Art. 6(1)(a) (your consent for the message you send). Analytics are used only with your consent — Art. 6(1)(a)."
+        },
+        {
+          "heading": "Recipients",
+          "body": "Hosting is provided by Vercel Inc. Enquiry submissions are handled by our email / form provider. We do not sell your personal data."
+        },
+        {
+          "heading": "International transfers",
+          "body": "As an India-based company, your data may be processed outside the European Economic Area. Where required, appropriate safeguards (such as Standard Contractual Clauses) are applied. Details on request."
+        },
+        {
+          "heading": "Retention",
+          "body": "We keep enquiry data only for as long as needed to handle your request and to meet legal obligations, then delete it."
+        },
+        {
+          "heading": "Your rights",
+          "body": "You may request access, rectification, erasure, restriction and portability, and object to processing. You may withdraw consent at any time and lodge a complaint with a data-protection supervisory authority."
+        },
+        {
+          "heading": "Contact",
+          "body": "For any privacy request, email sales@granitopia.com."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Notice",
+      "intro": "What we store on your device, and how to control it.",
+      "sections": [
+        {
+          "heading": "What we use",
+          "body": "We store a small local setting that remembers your cookie choice. If you accept, we enable privacy-friendly, anonymous traffic analytics (Vercel Analytics). We do not use advertising or cross-site tracking cookies."
+        },
+        {
+          "heading": "Managing your choice",
+          "body": "You can decline via the banner, or clear your browser's site data to reset your choice at any time."
+        }
+      ]
+    }
   }
 }

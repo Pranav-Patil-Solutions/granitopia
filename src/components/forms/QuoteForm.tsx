@@ -25,7 +25,9 @@ export function QuoteForm({ defaultStone }: { defaultStone?: string }) {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ defaultValues: { stone: defaultStone ?? "" } });
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "success" | "error" | "mailto"
+  >("idle");
 
   // TODO(assets): set NEXT_PUBLIC_FORMSPREE_ENDPOINT to the real Formspree URL.
   const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
@@ -41,7 +43,8 @@ export function QuoteForm({ defaultStone }: { defaultStone?: string }) {
       window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
         "Quote request — Granitopia",
       )}&body=${body}`;
-      setStatus("success");
+      // Honest: opening the mail client is not confirmed delivery.
+      setStatus("mailto");
       reset();
       return;
     }
@@ -63,10 +66,10 @@ export function QuoteForm({ defaultStone }: { defaultStone?: string }) {
     }
   }
 
-  if (status === "success") {
+  if (status === "success" || status === "mailto") {
     return (
       <div className="rounded-sm border border-copper/40 bg-copper/5 p-6 text-ink">
-        {t("form.success")}
+        {status === "mailto" ? t("form.mailtoFallback") : t("form.success")}
       </div>
     );
   }

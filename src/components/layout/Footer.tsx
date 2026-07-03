@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 
 export function Footer() {
@@ -13,9 +14,9 @@ export function Footer() {
     { label: nav("quote"), href: "#quote" },
   ];
   const legal = [
-    { label: t("privacy"), href: "#" },
-    { label: t("impressum"), href: "#" },
-    { label: t("cookies"), href: "#" },
+    { label: t("privacy"), href: "/privacy" },
+    { label: t("impressum"), href: "/impressum" },
+    { label: t("cookies"), href: "/cookies" },
   ];
 
   return (
@@ -93,9 +94,12 @@ export function Footer() {
             <ul className="space-y-2">
               {legal.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="transition-colors hover:text-copper">
+                  <Link
+                    href={l.href}
+                    className="transition-colors hover:text-copper"
+                  >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

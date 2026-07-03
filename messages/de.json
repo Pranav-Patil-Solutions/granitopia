@@ -179,7 +179,8 @@
       "success": "Vielen Dank – wir melden uns innerhalb eines Werktags.",
       "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder per WhatsApp.",
       "required": "Dieses Feld ist erforderlich",
-      "invalidEmail": "Bitte geben Sie eine gültige E-Mail ein"
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail ein",
+      "mailtoFallback": "Ihr E-Mail-Programm sollte sich öffnen – bitte senden Sie die Nachricht ab. Sie können uns auch direkt per WhatsApp erreichen."
     }
   },
   "Consent": {
@@ -187,5 +188,98 @@
     "accept": "Akzeptieren",
     "decline": "Ablehnen",
     "privacy": "Datenschutz"
+  },
+  "Legal": {
+    "eyebrow": "Rechtliches",
+    "updated": "Zuletzt aktualisiert",
+    "updatedDate": "4. Juli 2026",
+    "provisionalNote": "Diese Angaben werden derzeit finalisiert und dienen der Information. Für formale Unterlagen wenden Sie sich bitte an sales@granitopia.com.",
+    "reviewNote": "Arbeitsentwurf – vorbehaltlich einer juristischen Prüfung.",
+    "impressum": {
+      "title": "Impressum",
+      "intro": "Anbieterkennzeichnung gemäß § 5 DDG und § 18 MStV sowie allgemeine Unternehmensangaben.",
+      "sections": [
+        {
+          "heading": "Anbieter",
+          "body": "Granitopia Stones International LLP\nEine in Indien eingetragene Limited Liability Partnership (LLP).\nSitz: Bengaluru, Karnataka, Indien (vollständige Anschrift auf Anfrage)."
+        },
+        {
+          "heading": "Kontakt",
+          "body": "E-Mail: sales@granitopia.com\nTelefon / WhatsApp: +91 799 699 6655"
+        },
+        {
+          "heading": "Registrierung",
+          "body": "LLP-Identifikationsnummer (LLPIN): auf Anfrage.\nGST-Identifikationsnummer (GSTIN): auf Anfrage."
+        },
+        {
+          "heading": "Vertreten durch",
+          "body": "Die Designated Partners der LLP (Angaben auf Anfrage)."
+        },
+        {
+          "heading": "Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)",
+          "body": "Gemäß den vorstehenden Anbieterangaben."
+        },
+        {
+          "heading": "Haftung für Inhalte",
+          "body": "Die Inhalte dieser Seiten werden mit Sorgfalt erstellt; für Richtigkeit, Vollständigkeit und Aktualität übernehmen wir keine Gewähr. Als Diensteanbieter sind wir für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich; eine Pflicht zur Überwachung übermittelter oder gespeicherter fremder Informationen besteht nicht."
+        },
+        {
+          "heading": "Haftung für Links",
+          "body": "Diese Seite kann Links zu externen Websites enthalten, auf deren Inhalte wir keinen Einfluss haben. Für diese Inhalte übernehmen wir keine Haftung; verantwortlich ist der jeweilige Anbieter."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "intro": "Wie wir Ihre personenbezogenen Daten bei der Nutzung dieser Website behandeln – im Einklang mit der DSGVO und dem indischen Digital Personal Data Protection Act, 2023 (DPDP).",
+      "sections": [
+        {
+          "heading": "Verantwortlicher",
+          "body": "Granitopia Stones International LLP, Bengaluru, Indien.\nKontakt: sales@granitopia.com."
+        },
+        {
+          "heading": "Welche Daten wir erheben",
+          "body": "Bei Absenden des Anfrageformulars: Name, E-Mail und Land sowie optional Telefon, gewünschter Stein und Ihre Nachricht. Mit Ihrer Einwilligung erheben wir anonyme, datenschutzfreundliche Zugriffsstatistiken (Vercel Analytics). Wir verwenden keine Werbe-Cookies und kein Profiling."
+        },
+        {
+          "heading": "Zweck und Rechtsgrundlage",
+          "body": "Anfragedaten nutzen wir zur Beantwortung und zur Vorbereitung eines möglichen Angebots – Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) sowie lit. a (Einwilligung für Ihre Nachricht). Analysen erfolgen nur mit Ihrer Einwilligung – Art. 6 Abs. 1 lit. a."
+        },
+        {
+          "heading": "Empfänger",
+          "body": "Das Hosting erfolgt durch die Vercel Inc. Formularanfragen werden über unseren E-Mail-/Formulardienst verarbeitet. Wir verkaufen Ihre Daten nicht."
+        },
+        {
+          "heading": "Übermittlung in Drittländer",
+          "body": "Als Unternehmen mit Sitz in Indien können Ihre Daten außerhalb des EWR verarbeitet werden. Soweit erforderlich, werden geeignete Garantien (z. B. Standardvertragsklauseln) angewandt. Einzelheiten auf Anfrage."
+        },
+        {
+          "heading": "Speicherdauer",
+          "body": "Wir speichern Anfragedaten nur so lange, wie es zur Bearbeitung und zur Erfüllung gesetzlicher Pflichten erforderlich ist, und löschen sie anschließend."
+        },
+        {
+          "heading": "Ihre Rechte",
+          "body": "Sie haben Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Datenübertragbarkeit sowie ein Widerspruchsrecht. Eine erteilte Einwilligung können Sie jederzeit widerrufen und sich bei einer Aufsichtsbehörde beschweren."
+        },
+        {
+          "heading": "Kontakt",
+          "body": "Für Datenschutzanliegen: sales@granitopia.com."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie-Hinweis",
+      "intro": "Was wir auf Ihrem Gerät speichern und wie Sie dies steuern.",
+      "sections": [
+        {
+          "heading": "Was wir verwenden",
+          "body": "Wir speichern eine kleine lokale Einstellung, die Ihre Cookie-Auswahl merkt. Bei Zustimmung aktivieren wir datenschutzfreundliche, anonyme Zugriffsstatistiken (Vercel Analytics). Werbe- oder Tracking-Cookies setzen wir nicht ein."
+        },
+        {
+          "heading": "Auswahl verwalten",
+          "body": "Sie können über das Banner ablehnen oder die Website-Daten Ihres Browsers löschen, um Ihre Auswahl jederzeit zurückzusetzen."
+        }
+      ]
+    }
   }
 }
