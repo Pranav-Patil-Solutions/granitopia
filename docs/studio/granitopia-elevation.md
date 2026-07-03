@@ -138,6 +138,22 @@ Still no real 4K photography / scanned PBR maps / stone GLTF in the repo — rea
 - Reduced-motion: `#story` mounts **0 canvas**, shows **5 stacked chapters**, **0 errors**.
 - Cinematic: visual capture of all 5 chapters (mood/lighting/camera transforms + ch-1 inner glow) + console-error check — see run notes.
 
+---
+
+## Deployment & go-live status (2026-07-03 → 04) — SHIPPED
+
+The earlier passes' "NOT deployed / preview :3010" notes are **superseded** — the site is now in production.
+
+- **Source control established** (was 100% uncommitted): private repo **github.com/Pranav-Patil-Solutions/granitopia**, full app on `origin/master`. (`gh auth setup-git` fixed a Windows credential-helper push hang.)
+- **Production is LIVE and public:** **https://granitopia.vercel.app** — the 5-chapter "Journey" story (Pass 4) + photoreal slab + all earlier passes. Deployed via `vercel deploy --prod --yes` (Track B; free plan can't gate production — previews stay SSO-gated).
+- **Pass 5 — legal go-live:** real `/impressum`, `/privacy`, `/cookies` pages (en/de/ar) via `LegalContent` + `Legal` message namespace; footer legal links wired (were dead `#`/404). Contact-form mailto fallback made honest. All legal routes 200 (were 404).
+- **Compliance records:** `D:\vyaparwerk\compliance\deployment-records\granitopia\` (DEP-2026-07-03-2203Z = story; DEP-2026-07-03-2234Z = legal go-live) + register + Analyst reviews.
+
+### Still open (deferred by Pranav — "skip the legal stuff for now")
+- Legal pages are **provisional** — real facts pending (full address, LLPIN, GSTIN, Designated Partners, GDPR transfer safeguard) + a **professional legal review** of the German Impressum/Datenschutz.
+- Contact form delivery unwired — set `NEXT_PUBLIC_FORMSPREE_ENDPOINT` + redeploy.
+- OKLCH token migration, site-wide WCAG AA audit, hi-res/scanned PBR assets (procedural until then), DE/AR human translation review.
+
 ## Guardrail
 
-STOP at localhost preview. No production deploy without Pranav's approval. No invented legal facts.
+Deploys now go: build green → localhost preview → Pranav approval → Vercel preview → prod (all satisfied for the passes above). No invented legal facts (provisional pages use "on request" + are flagged for legal review). Keep future changes on this discipline.
