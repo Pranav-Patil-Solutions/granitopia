@@ -1,0 +1,191 @@
+{
+  "Meta": {
+    "title": "Granitopia — Utopie der Natursteine",
+    "description": "Granitopia Stones International LLP – Exporteur exquisiter Natursteine: Granit, Marmor, Quarzit und mehr in über 38 Länder."
+  },
+  "Nav": {
+    "collections": "Kollektionen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "quote": "Angebot anfordern",
+    "whatsapp": "WhatsApp",
+    "menu": "Menü",
+    "close": "Schließen"
+  },
+  "Hero": {
+    "eyebrow": "Utopie der Natursteine",
+    "titleLine1": "Stein,",
+    "titleAccent": "perfektioniert.",
+    "subtitle": "Aus indischen Steinbrüchen in über 38 Länder – exquisiter Granit, Marmor und Exoten, geschnitten und veredelt für die schönsten Räume der Welt.",
+    "watchFilm": "Film ansehen",
+    "scrollCue": "Scrollen zum Entdecken"
+  },
+  "Stats": {
+    "title": "Vom Steinbruch bis zum Container",
+    "countries": "38+",
+    "countriesLabel": "Belieferte Länder",
+    "area": "600.000+",
+    "areaLabel": "Quadratmeter / Jahr",
+    "containers": "1.000+",
+    "containersLabel": "Container / Jahr",
+    "units": "4",
+    "unitsLabel": "Produktionsstätten"
+  },
+  "Slab": {
+    "eyebrow": "Interaktive Vorschau",
+    "title": "Drehen Sie den Stein",
+    "subtitle": "Ziehen zum Drehen. Scrollen zum Zoomen. Wechseln Sie die Oberfläche und beobachten Sie das Licht – wie später in Ihrem Raum.",
+    "dragHint": "Ziehen zum Drehen",
+    "finishes": {
+      "polished": "Poliert",
+      "leathered": "Geledert",
+      "honed": "Geschliffen",
+      "flamed": "Geflammt"
+    },
+    "finishLabel": "Oberfläche",
+    "lightingLabel": "Beleuchtung",
+    "lighting": {
+      "gallery": "Galerie",
+      "showroom": "Showroom",
+      "evening": "Abendlicht"
+    },
+    "viewStone": "Diesen Stein ansehen"
+  },
+  "Story": {
+    "eyebrow": "Die Reise",
+    "title": "Woher er kommt. Was er wird.",
+    "skip": "Geschichte überspringen",
+    "chapters": {
+      "earth": {
+        "kicker": "Aus der Erde geboren",
+        "headline": "Hundert Millionen Jahre im Dunkeln.",
+        "body": "Tief im Berg falten Hitze und Druck Minerale zu Stein — geduldig und nie zweimal auf dieselbe Weise."
+      },
+      "unearthed": {
+        "kicker": "Ans Licht geholt",
+        "headline": "Sein erstes Licht.",
+        "body": "Aus der Steinbruchwand gelöst, bricht der Block ins Tageslicht — Tonnen roher Erde, im Ganzen gehoben."
+      },
+      "cut": {
+        "kicker": "Der Schnitt",
+        "headline": "Was immer schon darin verborgen lag.",
+        "body": "Die Säge öffnet den Block und die Maserung erscheint — ein Muster, das keine andere Platte je wiederholt."
+      },
+      "craft": {
+        "kicker": "Das Handwerk",
+        "headline": "Von Hand zum Leben erweckt.",
+        "body": "Unter geduldigen Händen wird roh zu geschliffen, und geschliffen zu tiefer, spiegelglatter Politur."
+      },
+      "home": {
+        "kicker": "Das Zuhause",
+        "headline": "Wo er endlich hingehört.",
+        "body": "Er kommt zur Ruhe in einer Küche, an einem Herd, in einem Zuhause — ein Stück Erde, das uns überdauert."
+      }
+    }
+  },
+  "Featured": {
+    "eyebrow": "Die Kollektionen",
+    "title": "Signature-Steine",
+    "subtitle": "Eine kuratierte Auswahl aus unseren Granit-, Marmor- und Exoten-Serien.",
+    "viewAll": "Alle Kollektionen ansehen",
+    "origin": "Herkunft",
+    "imported": "Importiert",
+    "categories": {
+      "granite": "Granit",
+      "marble": "Marmor",
+      "monuments": "Monumente",
+      "exotics": "Exoten",
+      "sandstone": "Sandstein",
+      "tiles": "Fliesen & Pflaster"
+    }
+  },
+  "Cta": {
+    "eyebrow": "Bauen wir etwas Bleibendes",
+    "title": "Angebot anfordern",
+    "body": "Nennen Sie uns Stein, Oberfläche und Menge. Unser Export-Team antwortet innerhalb eines Werktags.",
+    "button": "Kostenloses Angebot",
+    "whatsapp": "Auf WhatsApp chatten"
+  },
+  "Footer": {
+    "tagline": "Utopie der Natursteine",
+    "addressLabel": "Hauptsitz",
+    "addressValue": "Bengaluru, Karnataka, Indien",
+    "phoneLabel": "Telefon / WhatsApp",
+    "emailLabel": "E-Mail",
+    "exploreTitle": "Entdecken",
+    "companyTitle": "Unternehmen",
+    "legalTitle": "Rechtliches",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum",
+    "cookies": "Cookie-Hinweis",
+    "rights": "Granitopia Stones International LLP. Alle Rechte vorbehalten."
+  },
+  "Collections": {
+    "eyebrow": "Die Kollektionen",
+    "title": "Entdecken Sie unseren Stein",
+    "subtitle": "Sechs Serien, gefertigt in vier indischen Werken und in über 38 Länder geliefert.",
+    "viewCollection": "Kollektion ansehen",
+    "pieces": "{count} Steine",
+    "categoryBlurbs": {
+      "granite": "Strapazierfähiger, zeitloser Granit für Arbeitsplatten, Böden und Fassaden.",
+      "marble": "Leuchtender Marmor mit natürlicher Maserung für beeindruckende Innenräume.",
+      "exotics": "Seltene Farben und dramatische Bewegung für markante Oberflächen.",
+      "sandstone": "Natürlich strukturierter Sandstein für Pflaster, Verkleidung und Landschaftsbau.",
+      "monuments": "Beständiger Granit für Denkmäler und Grabmale.",
+      "tiles": "Robuste Fliesen und Pflastersteine für Böden, Wege und Außenbereiche."
+    }
+  },
+  "Category": {
+    "back": "Alle Kollektionen",
+    "inThisCollection": "In dieser Kollektion"
+  },
+  "StoneDetail": {
+    "back": "Zurück zu den Kollektionen",
+    "originLabel": "Herkunft",
+    "thicknessLabel": "Stärke",
+    "finishesLabel": "Verfügbare Oberflächen",
+    "applicationsLabel": "Anwendungen",
+    "specsTitle": "Spezifikationen",
+    "requestThis": "Diesen Stein anfragen",
+    "relatedTitle": "Mehr aus dieser Kollektion"
+  },
+  "About": {
+    "eyebrow": "Über Granitopia",
+    "title": "Vom Steinbruch bis zum Container",
+    "lead": "Granitopia Stones International LLP ist ein Exporteur exquisiter Natursteine und liefert Granit, Marmor, Quarzit und mehr in über 38 Länder.",
+    "p1": "Aus strategisch gelegenen Steinbrüchen in ganz Indien wählen wir Blöcke nach Farbe, Maserung und Struktur – die Grundlage jeder großartigen Platte.",
+    "p2": "In vier Produktionsstätten werden Blöcke gesägt, kalibriert und von Meistern und Präzisionsmaschinen auf engste Toleranzen veredelt.",
+    "p3": "Jährlich verarbeiten wir über 600.000 Quadratmeter und verschiffen mehr als 1.000 Container – zuverlässig und termingerecht.",
+    "missionTitle": "Unsere Mission",
+    "missionBody": "Den feinsten Naturstein aus indischen Steinbrüchen zu den anspruchsvollsten Projekten der Welt zu bringen – mit kompromissloser Qualität und Service.",
+    "visionTitle": "Unsere Vision",
+    "visionBody": "Der vertrauenswürdigste Name im Naturstein-Export zu sein – eine wahre Utopie des Steins."
+  },
+  "Contact": {
+    "eyebrow": "Kontakt",
+    "title": "Angebot anfordern",
+    "subtitle": "Nennen Sie uns Stein, Oberfläche und Menge. Unser Export-Team antwortet innerhalb eines Werktags.",
+    "directTitle": "Sprechen Sie direkt mit uns",
+    "orReach": "Oder erreichen Sie uns über",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "country": "Land",
+      "phone": "Telefon (optional)",
+      "stone": "Stein von Interesse",
+      "message": "Ihre Anforderung",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet…",
+      "success": "Vielen Dank – wir melden uns innerhalb eines Werktags.",
+      "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder per WhatsApp.",
+      "required": "Dieses Feld ist erforderlich",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail ein"
+    }
+  },
+  "Consent": {
+    "message": "Wir verwenden Cookies, um den Traffic zu messen und Ihr Erlebnis zu verbessern.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "privacy": "Datenschutz"
+  }
+}

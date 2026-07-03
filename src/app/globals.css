@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Granitopia — brand palette (matches live granitopia.com)
+   Light gallery scheme: white paper, charcoal ink, copper accent.
+   ============================================================ */
+
+@theme {
+  /* Surfaces */
+  --color-paper: #ffffff;
+  --color-paper-2: #f6f3ee; /* warm off-white for alternating sections */
+  --color-dark: #3e3333; /* warm brand dark (footer / contrast bands) */
+
+  /* Ink */
+  --color-ink: #2c2c2c;
+  --color-ink-soft: #6a6a6a;
+  --color-line: #e4e0d9; /* warm hairline borders */
+
+  /* Brand accents */
+  --color-copper: #b6702a;
+  --color-copper-deep: #965a20; /* filled buttons: white text passes AA (5.5:1) */
+  --color-copper-bright: #d98b45; /* accents ON dark bands: passes AA on charcoal (6:1) */
+  --color-gold: #d19a20;
+
+  /* Type families (wired to next/font CSS variables in the locale layout) */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-arabic: var(--font-plex-arabic), "Segoe UI", sans-serif;
+
+  /* Motion */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Arabic / RTL uses the Arabic face for body copy */
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+::selection {
+  background: var(--color-copper);
+  color: #fff;
+}
+
+/* Soft warm vignette helper */
+.bg-vignette {
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(0, 0, 0, 0.02), transparent 55%),
+    radial-gradient(120% 120% at 50% 120%, rgba(62, 51, 51, 0.05), transparent 60%);
+}
+
+/* Copper hairline divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-copper),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* ---- Cinematic hero background (light, stands in for real footage) ---- */
+/* TODO(assets): replace .hero-bg / .hero-spot with a real <video> poster + loop. */
+.hero-bg {
+  background:
+    radial-gradient(70% 60% at 18% 8%, #ffffff 0%, transparent 55%),
+    radial-gradient(60% 60% at 85% 18%, #f0e6d6 0%, transparent 60%),
+    linear-gradient(180deg, #faf7f2 0%, #f3ece1 55%, #efe6d8 100%);
+}
+.hero-spot {
+  background: radial-gradient(
+    42% 42% at 50% 38%,
+    rgba(182, 112, 42, 0.14),
+    transparent 70%
+  );
+  animation: heroDrift 14s var(--ease-cinematic) infinite alternate;
+}
+.hero-grain {
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+@keyframes heroDrift {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(8%, 5%, 0) scale(1.2);
+  }
+}
+.scroll-cue-dot {
+  animation: scrollCue 1.8s var(--ease-cinematic) infinite;
+}
+@keyframes scrollCue {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+/* Editorial type refinement */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+.font-display {
+  font-feature-settings: "liga" 1, "dlig" 1;
+  font-optical-sizing: auto;
+}
+
+/* ---- Infinite marquee ---- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-duration, 34s) linear infinite;
+  will-change: transform;
+}
+.marquee-group:hover .marquee-track {
+  animation-play-state: paused;
+}
+/* Soft edge fade so items emerge/vanish rather than hard-clip at the rail edge */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+/* ---- Custom cursor: hide native on fine pointers when enabled ---- */
+@media (pointer: fine) {
+  body.cursor-hidden,
+  body.cursor-hidden * {
+    cursor: none !important;
+  }
+}
+
+/* Respect reduced-motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .marquee-track {
+    animation: none;
+  }
 }

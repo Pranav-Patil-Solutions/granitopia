@@ -1,0 +1,191 @@
+{
+  "Meta": {
+    "title": "Granitopia — Utopia of Natural Stones",
+    "description": "Granitopia Stones International LLP — exporter of exquisite natural granite, marble, quartzite and more to 38+ countries."
+  },
+  "Nav": {
+    "collections": "Collections",
+    "about": "About",
+    "contact": "Contact",
+    "quote": "Get a Quote",
+    "whatsapp": "WhatsApp",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "Hero": {
+    "eyebrow": "Utopia of Natural Stones",
+    "titleLine1": "Stone,",
+    "titleAccent": "perfected.",
+    "subtitle": "From Indian quarries to 38+ countries — exquisite granite, marble and exotics, cut and finished for the world's finest spaces.",
+    "watchFilm": "Watch the film",
+    "scrollCue": "Scroll to explore"
+  },
+  "Stats": {
+    "title": "A quarry-to-container powerhouse",
+    "countries": "38+",
+    "countriesLabel": "Countries served",
+    "area": "600,000+",
+    "areaLabel": "Square metres / year",
+    "containers": "1,000+",
+    "containersLabel": "Containers shipped / year",
+    "units": "4",
+    "unitsLabel": "Manufacturing units"
+  },
+  "Slab": {
+    "eyebrow": "Interactive showcase",
+    "title": "Turn the stone in your hands",
+    "subtitle": "Drag to rotate. Scroll to zoom. Switch the finish and watch the light change — the way it will in your space.",
+    "dragHint": "Drag to rotate",
+    "finishes": {
+      "polished": "Polished",
+      "leathered": "Leathered",
+      "honed": "Honed",
+      "flamed": "Flamed"
+    },
+    "finishLabel": "Finish",
+    "lightingLabel": "Lighting",
+    "lighting": {
+      "gallery": "Gallery",
+      "showroom": "Showroom",
+      "evening": "Evening"
+    },
+    "viewStone": "View this stone"
+  },
+  "Story": {
+    "eyebrow": "The journey",
+    "title": "Where it comes from. What it becomes.",
+    "skip": "Skip the story",
+    "chapters": {
+      "earth": {
+        "kicker": "Born of the earth",
+        "headline": "A hundred million years in the dark.",
+        "body": "Deep in the mountain, heat and pressure fold minerals into stone — patient, and never made the same way twice."
+      },
+      "unearthed": {
+        "kicker": "Unearthed",
+        "headline": "Its first light.",
+        "body": "Freed from the quarry wall, the block breaks into daylight — tonnes of raw earth, lifted whole."
+      },
+      "cut": {
+        "kicker": "The cut",
+        "headline": "What was always hidden inside.",
+        "body": "The saw opens the block and the veining appears — a pattern no other slab will ever repeat."
+      },
+      "craft": {
+        "kicker": "The craft",
+        "headline": "Brought to life by hand.",
+        "body": "Under patient hands, raw becomes honed, and honed becomes a deep, mirror-still polish."
+      },
+      "home": {
+        "kicker": "The home",
+        "headline": "Where it finally belongs.",
+        "body": "It comes to rest in a kitchen, a hearth, a home — a piece of the earth, made to outlast us."
+      }
+    }
+  },
+  "Featured": {
+    "eyebrow": "The collections",
+    "title": "Signature stones",
+    "subtitle": "A curated selection from our granite, marble and exotic ranges.",
+    "viewAll": "View all collections",
+    "origin": "Origin",
+    "imported": "Imported",
+    "categories": {
+      "granite": "Granite",
+      "marble": "Marble",
+      "monuments": "Monuments",
+      "exotics": "Exotics",
+      "sandstone": "Sandstone",
+      "tiles": "Tiles & Cobbles"
+    }
+  },
+  "Cta": {
+    "eyebrow": "Let's build something lasting",
+    "title": "Request a quote",
+    "body": "Tell us the stone, the finish and the volume. Our export desk replies within one business day.",
+    "button": "Get a free quote",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "Footer": {
+    "tagline": "Utopia of Natural Stones",
+    "addressLabel": "Head office",
+    "addressValue": "Bengaluru, Karnataka, India",
+    "phoneLabel": "Phone / WhatsApp",
+    "emailLabel": "Email",
+    "exploreTitle": "Explore",
+    "companyTitle": "Company",
+    "legalTitle": "Legal",
+    "privacy": "Privacy Policy",
+    "impressum": "Impressum",
+    "cookies": "Cookie Notice",
+    "rights": "Granitopia Stones International LLP. All rights reserved."
+  },
+  "Collections": {
+    "eyebrow": "The collections",
+    "title": "Explore our stone",
+    "subtitle": "Six ranges, quarried and finished across four Indian units and shipped to 38+ countries.",
+    "viewCollection": "View collection",
+    "pieces": "{count} stones",
+    "categoryBlurbs": {
+      "granite": "Hard-wearing, timeless granite for countertops, flooring and façades.",
+      "marble": "Luminous marble with natural veining for interiors that impress.",
+      "exotics": "Rare colours and dramatic movement for statement surfaces.",
+      "sandstone": "Naturally textured sandstone for paving, cladding and landscaping.",
+      "monuments": "Enduring granite selected for memorials and monuments.",
+      "tiles": "Durable tiles and cobbles for flooring, paving and outdoor spaces."
+    }
+  },
+  "Category": {
+    "back": "All collections",
+    "inThisCollection": "In this collection"
+  },
+  "StoneDetail": {
+    "back": "Back to collections",
+    "originLabel": "Origin",
+    "thicknessLabel": "Thickness",
+    "finishesLabel": "Available finishes",
+    "applicationsLabel": "Applications",
+    "specsTitle": "Specifications",
+    "requestThis": "Request this stone",
+    "relatedTitle": "More from this collection"
+  },
+  "About": {
+    "eyebrow": "About Granitopia",
+    "title": "A quarry-to-container powerhouse",
+    "lead": "Granitopia Stones International LLP is an exporter of exquisite natural stone, delivering granite, marble, quartzite and more to over 38 countries.",
+    "p1": "From strategically located quarries across India, we select blocks for colour, grain and structural integrity — the foundation of every great slab.",
+    "p2": "Across four manufacturing units, blocks are gang-sawn, calibrated and finished by master craftsmen and precision machines to exacting tolerances.",
+    "p3": "Every year we process over 600,000 square metres and ship more than 1,000 containers — reliably, and on time.",
+    "missionTitle": "Our mission",
+    "missionBody": "To bring the finest natural stone from Indian quarries to the world's most demanding projects, with uncompromising quality and service.",
+    "visionTitle": "Our vision",
+    "visionBody": "To be the most trusted name in natural stone export — a true utopia of stone."
+  },
+  "Contact": {
+    "eyebrow": "Get in touch",
+    "title": "Request a quote",
+    "subtitle": "Tell us the stone, finish and volume. Our export desk replies within one business day.",
+    "directTitle": "Talk to us directly",
+    "orReach": "Or reach us on",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "country": "Country",
+      "phone": "Phone (optional)",
+      "stone": "Stone of interest",
+      "message": "Your requirement",
+      "submit": "Send enquiry",
+      "sending": "Sending…",
+      "success": "Thank you — we'll be in touch within one business day.",
+      "error": "Something went wrong. Please try again or WhatsApp us.",
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email"
+    }
+  },
+  "Consent": {
+    "message": "We use cookies to measure traffic and improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacy": "Privacy Policy"
+  }
+}
