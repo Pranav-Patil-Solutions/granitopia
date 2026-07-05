@@ -93,7 +93,9 @@ export default async function StonePage({
               {stone.name}
             </h1>
             <p className="mt-5 max-w-md text-ink-soft md:text-lg">
-              {st(`blurbs.${stone.slug}`)}
+              {stone.bespoke
+                ? st(`blurbs.${stone.slug}`)
+                : st("blurbTemplate", { name: stone.name })}
             </p>
 
             {/* Primary path to a quote — surfaced high */}

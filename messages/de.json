@@ -413,7 +413,9 @@
       "Andhra Pradesh, India": "Andhra Pradesh, Indien",
       "Rajasthan, India": "Rajasthan, Indien",
       "Telangana, India": "Telangana, Indien",
-      "Imported": "Importiert"
-    }
+      "Imported": "Importiert",
+      "India": "Indien"
+    },
+    "blurbTemplate": "{name} – ein Naturstein aus der Granitopia-Kollektion, in Indien gebrochen und auf Bestellung für Projekte in über 38 Ländern veredelt."
   }
 }

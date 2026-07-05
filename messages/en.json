@@ -413,7 +413,9 @@
       "Andhra Pradesh, India": "Andhra Pradesh, India",
       "Rajasthan, India": "Rajasthan, India",
       "Telangana, India": "Telangana, India",
-      "Imported": "Imported"
-    }
+      "Imported": "Imported",
+      "India": "India"
+    },
+    "blurbTemplate": "{name} — a natural stone from Granitopia's collection, quarried in India and finished to order for projects in 38+ countries."
   }
 }
