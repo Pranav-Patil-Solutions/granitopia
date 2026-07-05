@@ -167,7 +167,31 @@
     "applicationsLabel": "Applications",
     "specsTitle": "Specifications",
     "requestThis": "Request this stone",
-    "relatedTitle": "More from this collection"
+    "relatedTitle": "More from this collection",
+    "applications": {
+      "Backlit surfaces": "Backlit surfaces",
+      "Bar tops": "Bar tops",
+      "Bathrooms": "Bathrooms",
+      "Cladding": "Cladding",
+      "Cobbles": "Cobbles",
+      "Countertops": "Countertops",
+      "Exterior cladding": "Exterior cladding",
+      "Facades": "Facades",
+      "Feature walls": "Feature walls",
+      "Flooring": "Flooring",
+      "Headstones": "Headstones",
+      "Islands": "Islands",
+      "Landscaping": "Landscaping",
+      "Memorials": "Memorials",
+      "Monuments": "Monuments",
+      "Paving": "Paving",
+      "Plaques": "Plaques",
+      "Statement surfaces": "Statement surfaces",
+      "Steps": "Steps",
+      "Tabletops": "Tabletops"
+    },
+    "requestSub": "Samples and full slabs available — we typically reply within one business day.",
+    "macroEyebrow": "The surface"
   },
   "About": {
     "eyebrow": "About Granitopia",
@@ -361,6 +385,28 @@
           "body": "You can decline via the banner, or clear your browser's site data to reset your choice at any time."
         }
       ]
+    }
+  },
+  "Stones": {
+    "blurbs": {
+      "absolute-black": "A flawless jet-black granite with a mirror polish — the definitive choice for statement countertops and cladding.",
+      "black-galaxy": "Deep black scattered with golden flecks that catch the light like a night sky.",
+      "tan-brown": "Warm chocolate and rust tones with excellent weather resistance for interiors and façades.",
+      "alaska-gold": "Golden-brown movement with a warm, glowing depth for feature surfaces.",
+      "brown-fantasy": "A dark brown marble laced with fine golden veins — dramatic, warm and unmistakable.",
+      "rainforest-green": "Exotic green marble with dendritic 'forest' veining, cut from Indian hillsides.",
+      "crystallo-divine": "A translucent, crystalline exotic that glows when backlit — pure luxury.",
+      "patagonia": "Bold, glacier-like movement in a rare exotic — a true statement stone.",
+      "mint-sandstone": "A soft green-grey sandstone, naturally slip-resistant for paving and façades.",
+      "mahogany": "A deep red-brown granite favoured for enduring memorials and monuments.",
+      "tandur-grey": "A hard-wearing grey limestone, ideal for flooring, paving and cobbles."
+    },
+    "origins": {
+      "Karnataka, India": "Karnataka, India",
+      "Andhra Pradesh, India": "Andhra Pradesh, India",
+      "Rajasthan, India": "Rajasthan, India",
+      "Telangana, India": "Telangana, India",
+      "Imported": "Imported"
     }
   }
 }

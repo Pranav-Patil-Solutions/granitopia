@@ -167,7 +167,31 @@
     "applicationsLabel": "Anwendungen",
     "specsTitle": "Spezifikationen",
     "requestThis": "Diesen Stein anfragen",
-    "relatedTitle": "Mehr aus dieser Kollektion"
+    "relatedTitle": "Mehr aus dieser Kollektion",
+    "applications": {
+      "Backlit surfaces": "Hinterleuchtete Flächen",
+      "Bar tops": "Bartresen",
+      "Bathrooms": "Badezimmer",
+      "Cladding": "Verkleidung",
+      "Cobbles": "Pflastersteine",
+      "Countertops": "Arbeitsplatten",
+      "Exterior cladding": "Außenverkleidung",
+      "Facades": "Fassaden",
+      "Feature walls": "Akzentwände",
+      "Flooring": "Bodenbeläge",
+      "Headstones": "Grabsteine",
+      "Islands": "Kücheninseln",
+      "Landscaping": "Garten- und Landschaftsbau",
+      "Memorials": "Gedenkstätten",
+      "Monuments": "Denkmäler",
+      "Paving": "Pflasterung",
+      "Plaques": "Gedenktafeln",
+      "Statement surfaces": "Markante Flächen",
+      "Steps": "Stufen",
+      "Tabletops": "Tischplatten"
+    },
+    "requestSub": "Muster und ganze Platten verfügbar – wir antworten in der Regel innerhalb eines Werktags.",
+    "macroEyebrow": "Die Oberfläche"
   },
   "About": {
     "eyebrow": "Über Granitopia",
@@ -361,6 +385,28 @@
           "body": "Sie können über das Banner ablehnen oder die Website-Daten Ihres Browsers löschen, um Ihre Auswahl jederzeit zurückzusetzen."
         }
       ]
+    }
+  },
+  "Stones": {
+    "blurbs": {
+      "absolute-black": "Ein makelloser tiefschwarzer Granit mit Spiegelpolitur – die definitive Wahl für markante Arbeitsplatten und Verkleidungen.",
+      "black-galaxy": "Tiefes Schwarz, durchsetzt von goldenen Einsprengseln, die das Licht wie ein Nachthimmel einfangen.",
+      "tan-brown": "Warme Schokoladen- und Rosttöne mit ausgezeichneter Witterungsbeständigkeit für Innenräume und Fassaden.",
+      "alaska-gold": "Goldbraune Maserung mit warmer, leuchtender Tiefe für Akzentflächen.",
+      "brown-fantasy": "Ein dunkelbrauner Marmor, durchzogen von feinen goldenen Adern – dramatisch, warm und unverkennbar.",
+      "rainforest-green": "Exotischer grüner Marmor mit dendritischer „Wald“-Aderung, geschnitten aus indischen Hügeln.",
+      "crystallo-divine": "Ein durchscheinender, kristalliner Exot, der hinterleuchtet erstrahlt – purer Luxus.",
+      "patagonia": "Kühne, gletscherartige Bewegung in einem seltenen Exoten – ein echter Blickfang.",
+      "mint-sandstone": "Ein sanfter grün-grauer Sandstein, von Natur aus rutschfest für Pflaster und Fassaden.",
+      "mahogany": "Ein tiefroter-brauner Granit, geschätzt für beständige Gedenkstätten und Denkmäler.",
+      "tandur-grey": "Ein strapazierfähiger grauer Kalkstein, ideal für Bodenbeläge, Pflasterung und Pflastersteine."
+    },
+    "origins": {
+      "Karnataka, India": "Karnataka, Indien",
+      "Andhra Pradesh, India": "Andhra Pradesh, Indien",
+      "Rajasthan, India": "Rajasthan, Indien",
+      "Telangana, India": "Telangana, Indien",
+      "Imported": "Importiert"
     }
   }
 }

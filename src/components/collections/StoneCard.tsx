@@ -15,8 +15,8 @@ import type { Stone } from "@/data/stones";
  * origin rather than repeating the category.
  */
 export function StoneCard({ stone, index = 0 }: { stone: Stone; index?: number }) {
-  const t = useTranslations("Featured");
-  const origin = stone.origin === "Imported" ? t("imported") : stone.origin;
+  const st = useTranslations("Stones");
+  const origin = st(`origins.${stone.origin}`);
 
   return (
     <RevealImage delay={(index % 3) * 0.08}>
