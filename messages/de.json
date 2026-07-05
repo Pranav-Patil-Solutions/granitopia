@@ -286,7 +286,13 @@
       "required": "Dieses Feld ist erforderlich",
       "invalidEmail": "Bitte geben Sie eine gültige E-Mail ein",
       "mailtoFallback": "Ihr E-Mail-Programm sollte sich öffnen – bitte senden Sie die Nachricht ab. Sie können uns auch direkt per WhatsApp erreichen."
-    }
+    },
+    "reassure": {
+      "fast": "Antwort in einem Werktag",
+      "reach": "Versand in über 38 Länder",
+      "samples": "Muster auf Anfrage"
+    },
+    "showroomAlt": "Ein warmer Ausstellungsraum mit hinterleuchteter Onyxwand und Marmorboden"
   },
   "Consent": {
     "message": "Wir verwenden Cookies, um den Traffic zu messen und Ihr Erlebnis zu verbessern.",

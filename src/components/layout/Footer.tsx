@@ -47,7 +47,7 @@ export function Footer() {
               href={`tel:${PHONE_TEL}`}
               className="transition-colors hover:text-copper"
             >
-              {PHONE_DISPLAY}
+              <bdi dir="ltr">{PHONE_DISPLAY}</bdi>
             </a>
             <p className="mt-4 text-xs uppercase tracking-widest text-copper">
               {t("emailLabel")}

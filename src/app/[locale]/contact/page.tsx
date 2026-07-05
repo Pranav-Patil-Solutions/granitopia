@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { QuoteForm } from "@/components/forms/QuoteForm";
@@ -32,6 +33,12 @@ export default async function ContactPage({
   const stoneSlug = typeof sp.stone === "string" ? sp.stone : undefined;
   const stone = stoneSlug ? getStone(stoneSlug) : undefined;
 
+  const reassurances = [
+    t("reassure.fast"),
+    t("reassure.reach"),
+    t("reassure.samples"),
+  ];
+
   return (
     <main>
       <PageHeader
@@ -39,51 +46,77 @@ export default async function ContactPage({
         title={t("title")}
         subtitle={t("subtitle")}
       />
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr]">
-          <QuoteForm defaultStone={stone?.name} />
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="grid items-start gap-10 md:grid-cols-[1.5fr_1fr] md:gap-12">
+          {/* Enquiry */}
+          <div>
+            <QuoteForm defaultStone={stone?.name} />
 
-          <aside className="rounded-sm border border-line bg-paper-2 p-8">
-            <h2 className="font-display text-xl text-ink">
-              {t("directTitle")}
-            </h2>
+            {/* Low-friction reassurance */}
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-6">
+              {reassurances.map((r) => (
+                <li
+                  key={r}
+                  className="flex items-center gap-2 text-xs uppercase tracking-widest text-ink-soft"
+                >
+                  <span aria-hidden className="text-copper">
+                    ●
+                  </span>
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <p className="mt-6 text-xs uppercase tracking-widest text-ink-soft">
-              {f("addressLabel")}
-            </p>
-            <p className="mt-1 text-ink">{f("addressValue")}</p>
+          {/* Warm showroom panel — direct contact + a prominent WhatsApp route */}
+          <aside className="relative min-h-[520px] overflow-hidden rounded-sm border border-line">
+            <Image
+              src="/images/contact/showroom.jpg"
+              alt={t("showroomAlt")}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/25" />
+            <div className="absolute inset-0 flex flex-col justify-end p-8">
+              <h2 className="font-display text-2xl text-white">
+                {t("directTitle")}
+              </h2>
 
-            <p className="mt-5 text-xs uppercase tracking-widest text-ink-soft">
-              {f("phoneLabel")}
-            </p>
-            <a
-              href={`tel:${PHONE_TEL}`}
-              className="mt-1 block text-ink transition-colors hover:text-copper"
-            >
-              {PHONE_DISPLAY}
-            </a>
+              <p className="mt-6 text-[10px] uppercase tracking-[0.3em] text-copper-bright">
+                {f("addressLabel")}
+              </p>
+              <p className="mt-1 text-sm text-white/85">{f("addressValue")}</p>
 
-            <p className="mt-5 text-xs uppercase tracking-widest text-ink-soft">
-              {f("emailLabel")}
-            </p>
-            <a
-              href={`mailto:${EMAIL}`}
-              className="mt-1 block text-ink transition-colors hover:text-copper"
-            >
-              {EMAIL}
-            </a>
+              <p className="mt-5 text-[10px] uppercase tracking-[0.3em] text-copper-bright">
+                {f("phoneLabel")}
+              </p>
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="mt-1 block text-sm text-white/85 transition-colors hover:text-copper-bright"
+              >
+                <bdi dir="ltr">{PHONE_DISPLAY}</bdi>
+              </a>
 
-            <p className="mt-8 text-xs uppercase tracking-widest text-ink-soft">
-              {t("orReach")}
-            </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-block rounded-full border border-copper px-6 py-2.5 text-xs uppercase tracking-widest text-copper transition-colors hover:bg-copper hover:text-white"
-            >
-              {nav("whatsapp")}
-            </a>
+              <p className="mt-5 text-[10px] uppercase tracking-[0.3em] text-copper-bright">
+                {f("emailLabel")}
+              </p>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="mt-1 block text-sm text-white/85 transition-colors hover:text-copper-bright"
+              >
+                {EMAIL}
+              </a>
+
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-copper-deep px-7 py-3 text-xs font-medium uppercase tracking-widest text-white transition-transform hover:scale-105"
+              >
+                {t("orReach")} {nav("whatsapp")}
+              </a>
+            </div>
           </aside>
         </div>
       </section>

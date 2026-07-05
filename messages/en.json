@@ -286,7 +286,13 @@
       "required": "This field is required",
       "invalidEmail": "Please enter a valid email",
       "mailtoFallback": "Your email app should open — please hit send to reach us. You can also WhatsApp us directly."
-    }
+    },
+    "reassure": {
+      "fast": "One business day reply",
+      "reach": "Ships to 38+ countries",
+      "samples": "Samples on request"
+    },
+    "showroomAlt": "A warm showroom with a backlit onyx feature wall and marble floor"
   },
   "Consent": {
     "message": "We use cookies to measure traffic and improve your experience.",
