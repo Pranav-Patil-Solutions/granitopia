@@ -74,6 +74,14 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                <Link
+                  href="/careers"
+                  className="transition-colors hover:text-copper"
+                >
+                  {nav("careers")}
+                </Link>
+              </li>
+              <li>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"

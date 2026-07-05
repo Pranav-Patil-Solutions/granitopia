@@ -2,7 +2,12 @@
 
 import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls, ContactShadows } from "@react-three/drei";
+import {
+  OrbitControls,
+  ContactShadows,
+  RoundedBox,
+  MeshReflectorMaterial,
+} from "@react-three/drei";
 import { EffectComposer, Bloom, SSAO, DepthOfField } from "@react-three/postprocessing";
 import { Suspense, useEffect } from "react";
 import type { Finish, Stone } from "@/data/stones";
@@ -47,14 +52,44 @@ const PRESETS: Record<Lighting, Preset> = {
 function Slab({ stone, finish }: { stone: Stone; finish: Finish }) {
   const material = useStoneMaterial(stone, finish);
   return (
-    <mesh
+    // Eased edges: real cut slabs have a fine chamfer that catches a bright
+    // specular line along the rim — a hard box reads as CGI. RoundedBox gives
+    // that rim highlight cheaply.
+    <RoundedBox
+      args={[2.2, 3, 0.16]}
+      radius={0.014}
+      smoothness={5}
+      bevelSegments={4}
       rotation={[0, -0.42, 0]}
       position={[0, 0.15, 0]}
       material={material}
       castShadow
-    >
-      {/* real edge thickness */}
-      <boxGeometry args={[2.2, 3, 0.16]} />
+      receiveShadow
+    />
+  );
+}
+
+/**
+ * Polished showroom floor. A blurred planar reflection grounds the slab the way
+ * a real gallery floor would — the single biggest "is this real?" cue. Renders
+ * an extra pass, so it's gated to capable devices by the caller.
+ */
+function ReflectiveFloor() {
+  return (
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.36, 0]} receiveShadow>
+      <planeGeometry args={[16, 16]} />
+      <MeshReflectorMaterial
+        resolution={512}
+        mixBlur={1}
+        mixStrength={1.1}
+        blur={[420, 220]}
+        roughness={0.85}
+        depthScale={1.1}
+        minDepthThreshold={0.4}
+        maxDepthThreshold={1.3}
+        color="#0e0b0a"
+        metalness={0.35}
+      />
     </mesh>
   );
 }
@@ -95,7 +130,7 @@ function CinematicEffects() {
 
 /**
  * Interactive 3D slab. Default export so it can be lazy-loaded with
- * next/dynamic ({ ssr: false }) from SlabShowcase.
+ * next/dynamic ({ ssr: false }) from the stone detail viewer.
  */
 export default function SlabViewer({
   stone,
@@ -128,16 +163,19 @@ export default function SlabViewer({
         intensity={p.key.intensity}
         color={p.key.color}
         castShadow
-        shadow-mapSize={[1024, 1024]}
+        shadow-mapSize={post ? [2048, 2048] : [1024, 1024]}
+        shadow-bias={-0.0004}
       />
 
       <Suspense fallback={null}>
         <Slab stone={stone} finish={finish} />
+        {/* Reflective floor only on capable devices (extra render pass). */}
+        {post && !reduced && <ReflectiveFloor />}
       </Suspense>
 
       <ContactShadows
-        position={[0, -1.62, 0]}
-        opacity={0.55}
+        position={[0, -1.35, 0]}
+        opacity={post ? 0.4 : 0.55}
         scale={9}
         blur={2.8}
         far={4}

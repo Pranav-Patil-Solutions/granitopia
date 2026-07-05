@@ -6,6 +6,7 @@
   "Nav": {
     "collections": "Kollektionen",
     "about": "Über uns",
+    "careers": "Karriere",
     "contact": "Kontakt",
     "quote": "Angebot anfordern",
     "whatsapp": "WhatsApp",
@@ -31,6 +32,12 @@
     "units": "4",
     "unitsLabel": "Produktionsstätten"
   },
+  "Gallery": {
+    "eyebrow": "Die Galerie",
+    "title": "Der Stein aus der Nähe",
+    "subtitle": "Ausgewählte Platten aus unseren Granit-, Marmor- und Exotenreihen – fotografiert bei ihrer Ankunft, bereit für Ihren Raum.",
+    "viewAll": "Alle Kollektionen ansehen"
+  },
   "Slab": {
     "eyebrow": "Interaktive Vorschau",
     "title": "Drehen Sie den Stein",
@@ -53,33 +60,38 @@
   },
   "Story": {
     "eyebrow": "Die Reise",
-    "title": "Woher er kommt. Was er wird.",
+    "title": "Ein Stein. Hundert Millionen Jahre Geschichte.",
     "skip": "Geschichte überspringen",
     "chapters": {
       "earth": {
-        "kicker": "Aus der Erde geboren",
-        "headline": "Hundert Millionen Jahre im Dunkeln.",
-        "body": "Tief im Berg falten Hitze und Druck Minerale zu Stein — geduldig und nie zweimal auf dieselbe Weise."
+        "kicker": "Aus Feuer geboren",
+        "headline": "Am Anfang war Feuer.",
+        "body": "Tief unter der Erde formen Hitze und unvorstellbarer Druck rohe Minerale zu Stein — langsam und nie zweimal gleich.",
+        "alt": "Geschmolzenes Gestein glüht orange aus dem Inneren der dunklen Erde"
       },
       "unearthed": {
         "kicker": "Ans Licht geholt",
-        "headline": "Sein erstes Licht.",
-        "body": "Aus der Steinbruchwand gelöst, bricht der Block ins Tageslicht — Tonnen roher Erde, im Ganzen gehoben."
+        "headline": "Dann traf ihn das Licht.",
+        "body": "Ein einziger Block löst sich aus der Steinbruchwand — Tonnen roher Erde, im Ganzen ans Licht gehoben.",
+        "alt": "Hohe weiße Marmor-Steinbruchwand mit einem Bagger als Größenvergleich"
       },
       "cut": {
-        "kicker": "Der Schnitt",
-        "headline": "Was immer schon darin verborgen lag.",
-        "body": "Die Säge öffnet den Block und die Maserung erscheint — ein Muster, das keine andere Platte je wiederholt."
+        "kicker": "Die Enthüllung",
+        "headline": "Ein Schnitt. Ein Muster, das niemand je gesehen hat.",
+        "body": "Die Säge öffnet den Block und die Adern erscheinen — ein Muster, das die Natur nur einmal zeichnet und nie wiederholt.",
+        "alt": "Nahaufnahme einer gesägten Marmorplatte, die ihre natürliche Aderung zeigt"
       },
       "craft": {
         "kicker": "Das Handwerk",
-        "headline": "Von Hand zum Leben erweckt.",
-        "body": "Unter geduldigen Händen wird roh zu geschliffen, und geschliffen zu tiefer, spiegelglatter Politur."
+        "headline": "Dann übernehmen Menschenhände.",
+        "body": "Von Hand geschnitten, kalibriert und poliert, bis roher Fels zu tiefem, spiegelglattem Glanz wird.",
+        "alt": "Die staubbedeckte Hand eines Steinmetzes führt einen Meißel, um eine Steinsäule zu behauen"
       },
       "home": {
         "kicker": "Das Zuhause",
-        "headline": "Wo er endlich hingehört.",
-        "body": "Er kommt zur Ruhe in einer Küche, an einem Herd, in einem Zuhause — ein Stück Erde, das uns überdauert."
+        "headline": "Und endlich kommt er nach Hause.",
+        "body": "Eine Küche. Ein Kamin. Ein Wahrzeichen. Ein Stück Erde, das uns alle überdauert.",
+        "alt": "Eine luxuriöse Marmorküche mit einer großen geäderten Kücheninsel in Ruhe"
       }
     }
   },
@@ -159,7 +171,68 @@
     "missionTitle": "Unsere Mission",
     "missionBody": "Den feinsten Naturstein aus indischen Steinbrüchen zu den anspruchsvollsten Projekten der Welt zu bringen – mit kompromissloser Qualität und Service.",
     "visionTitle": "Unsere Vision",
-    "visionBody": "Der vertrauenswürdigste Name im Naturstein-Export zu sein – eine wahre Utopie des Steins."
+    "visionBody": "Der vertrauenswürdigste Name im Naturstein-Export zu sein – eine wahre Utopie des Steins.",
+    "subtitle": "Von Steinbrüchen in ganz Indien zu Vorzeigeprojekten in über 38 Ländern – Naturstein, im Ganzen geliefert.",
+    "journey": {
+      "eyebrow": "Vom Steinbruch zum Container",
+      "title": "Wie jede Platte zu Ihnen gelangt"
+    },
+    "steps": {
+      "quarry": {
+        "label": "01 — Am Ursprung",
+        "title": "Handverlesene Blöcke",
+        "alt": "Luftaufnahme großer Marmorblöcke, verteilt über einen sonnigen Steinbruchboden"
+      },
+      "manufacturing": {
+        "label": "02 — In unseren Werken",
+        "title": "Gesägt, kalibriert, veredelt",
+        "alt": "Reihen großer fertiger Steinplatten auf Gestellen in einer Fabrik"
+      },
+      "export": {
+        "label": "03 — In die Welt",
+        "title": "Pünktlich verschifft",
+        "alt": "Reihen von Schiffscontainern an einem Hafenterminal im warmen Morgenlicht"
+      }
+    }
+  },
+  "Careers": {
+    "eyebrow": "Karriere bei Granitopia",
+    "title": "Eine Karriere, in Stein gemeißelt",
+    "whyTitle": "Warum bei uns arbeiten",
+    "whyBody": "Von der Steinbruchwand bis zum Containerhof bringen unsere Mitarbeitenden exquisiten Naturstein zu den schönsten Projekten der Welt. Werden Sie Teil eines praxisnahen Teams vom Steinbruch bis zum Container, in dem Handwerk, Präzision und Freude am Material an erster Stelle stehen – und gute Arbeit in über 38 Länder reist.",
+    "openRolesTitle": "Offene Stellen",
+    "locationLabel": "Standort",
+    "typeLabel": "Art",
+    "apply": "Jetzt bewerben",
+    "ctaTitle": "Ihre Stelle nicht dabei?",
+    "ctaBody": "Wir freuen uns immer über talentierte Menschen, die Naturstein lieben. Sagen Sie uns, wie Sie beitragen möchten.",
+    "ctaButton": "Kontakt aufnehmen",
+    "roles": {
+      "quarryLead": {
+        "title": "Leiter Steinbruchbetrieb",
+        "location": "Karnataka, Indien",
+        "type": "Vollzeit",
+        "blurb": "Planen und leiten Sie den Blockabbau, fördern Sie Sicherheit und Ausbeute an der Steinbruchwand."
+      },
+      "exportSales": {
+        "title": "Exportvertriebsleiter",
+        "location": "Bengaluru, Indien",
+        "type": "Vollzeit",
+        "blurb": "Bauen Sie unser Exportgeschäft aus und betreuen Sie Steinkäufer in über 38 Ländern."
+      },
+      "cncFinisher": {
+        "title": "CNC- / Plattenveredler",
+        "location": "Rajasthan, Indien",
+        "type": "Vollzeit",
+        "blurb": "Schneiden, kalibrieren und veredeln Sie Platten von Hand auf engste Toleranzen an Präzisionsmaschinen."
+      },
+      "logistics": {
+        "title": "Logistikkoordinator",
+        "location": "Chennai, Indien",
+        "type": "Vollzeit",
+        "blurb": "Steuern Sie Container und Dokumente, um jährlich über 1.000 Ladungen pünktlich zu verschiffen."
+      }
+    }
   },
   "Contact": {
     "eyebrow": "Kontakt",

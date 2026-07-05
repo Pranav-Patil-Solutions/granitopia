@@ -1,21 +1,36 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { useReducedMotion } from "@/lib/motion";
 
+/**
+ * Home hero. Cinematic background video (real quarry-to-showroom footage) with
+ * a slow scroll-driven Ken-Burns scale, a kinetic word-reveal headline and the
+ * quote CTA. A poster paints instantly and the video fades in once it can play,
+ * so the footage never blocks first paint.
+ */
 export function VideoHero() {
   const t = useTranslations("Hero");
   const nav = useTranslations("Nav");
   const reduced = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const dialogRef = useRef<HTMLDivElement>(null);
-  const closeBtnRef = useRef<HTMLButtonElement>(null);
-  const [filmOpen, setFilmOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Belt-and-braces autoplay: some browsers ignore the autoPlay attribute on
+  // hydration, so we also call play() once the element mounts.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v || reduced) return;
+    v.muted = true;
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    v.addEventListener("loadeddata", tryPlay, { once: true });
+    return () => v.removeEventListener("loadeddata", tryPlay);
+  }, [reduced]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -26,45 +41,6 @@ export function VideoHero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, reduced ? 1 : 1.12]);
   // Gentle veil that layers on as the hero scrolls away (brief §6).
   const veil = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 0.35]);
-
-  // Accessible modal: focus trap, Escape to close, scroll lock, focus return.
-  useEffect(() => {
-    if (!filmOpen) return;
-    const prevActive = document.activeElement as HTMLElement | null;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeBtnRef.current?.focus();
-
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        setFilmOpen(false);
-        return;
-      }
-      if (e.key !== "Tab") return;
-      const dialog = dialogRef.current;
-      if (!dialog) return;
-      const nodes = dialog.querySelectorAll<HTMLElement>(
-        'button, [href], video, [tabindex]:not([tabindex="-1"])',
-      );
-      if (nodes.length === 0) return;
-      const first = nodes[0];
-      const last = nodes[nodes.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-      (triggerRef.current ?? prevActive)?.focus?.();
-    };
-  }, [filmOpen]);
 
   const words = [
     { text: t("titleLine1"), accent: false },
@@ -79,27 +55,33 @@ export function VideoHero() {
       ref={ref}
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Cinematic background video (real footage) */}
+      {/* Cinematic background video — real quarry-to-showroom footage, so the
+          hero shows what Granitopia actually does. Poster paints instantly; the
+          film fades in once it can play so the heavier file never blocks first
+          paint.
+          TODO(asset): drop the final on-brand quarry/factory cut at
+          /public/media/hero.mp4 (16:9, muted, ~10–20s loop) to replace this. */}
       <motion.div style={{ scale }} className="absolute inset-0">
         <video
-          className="h-full w-full object-cover"
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
           poster="/media/banners/banner.jpg"
-          autoPlay={!reduced}
+          autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           aria-hidden="true"
         >
-          <source src="/media/marble-texture.mp4" type="video/mp4" />
+          <source src="/media/hero.mp4" type="video/mp4" />
         </video>
-        {/* Layered scrim: lifts contrast behind the headline, lets the footage
-            breathe at the edges (replaces the flat 55% wash). */}
+        {/* Layered scrim: lifts contrast behind the headline, lets the image
+            breathe at the edges. */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 85% at 50% 42%, rgba(255,255,255,0.74), rgba(255,255,255,0.46) 48%, rgba(255,255,255,0.30) 100%)",
+              "radial-gradient(120% 85% at 50% 42%, rgba(255,255,255,0.58), rgba(255,255,255,0.34) 48%, rgba(255,255,255,0.18) 100%)",
           }}
         />
         <div className="bg-vignette absolute inset-0" />
@@ -164,20 +146,12 @@ export function VideoHero() {
             </Link>
           </Magnetic>
           <Magnetic>
-            <button
-              ref={triggerRef}
-              type="button"
-              onClick={() => setFilmOpen(true)}
-              className="flex items-center gap-3 text-sm uppercase tracking-widest text-ink transition-colors hover:text-copper-deep"
+            <Link
+              href="/collections"
+              className="inline-block rounded-full border border-copper px-7 py-3 text-sm font-medium uppercase tracking-widest text-copper-deep transition-colors hover:bg-copper-deep hover:text-white"
             >
-              <span
-                aria-hidden="true"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-copper text-copper-deep"
-              >
-                ▶
-              </span>
-              {t("watchFilm")}
-            </button>
+              {nav("collections")}
+            </Link>
           </Magnetic>
         </div>
 
@@ -201,40 +175,6 @@ export function VideoHero() {
           {t("scrollCue")}
         </p>
       </div>
-
-      {/* Film modal — real quarry footage */}
-      {filmOpen && (
-        <div
-          ref={dialogRef}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-dark/90 px-6"
-          role="dialog"
-          aria-modal="true"
-          aria-label={t("watchFilm")}
-          onClick={() => setFilmOpen(false)}
-        >
-          <div
-            className="relative aspect-video w-full max-w-4xl overflow-hidden rounded-sm border border-white/10 bg-dark"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <video
-              className="h-full w-full object-cover"
-              src="/media/hero.mp4"
-              controls
-              autoPlay
-              playsInline
-            />
-            <button
-              ref={closeBtnRef}
-              type="button"
-              onClick={() => setFilmOpen(false)}
-              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-2xl text-white/80 hover:text-copper"
-              aria-label={nav("close")}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

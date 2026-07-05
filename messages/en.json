@@ -6,6 +6,7 @@
   "Nav": {
     "collections": "Collections",
     "about": "About",
+    "careers": "Careers",
     "contact": "Contact",
     "quote": "Get a Quote",
     "whatsapp": "WhatsApp",
@@ -31,6 +32,12 @@
     "units": "4",
     "unitsLabel": "Manufacturing units"
   },
+  "Gallery": {
+    "eyebrow": "The gallery",
+    "title": "A closer look at the stone",
+    "subtitle": "Featured slabs from our granite, marble and exotic ranges — photographed as they arrive, ready for your space.",
+    "viewAll": "View all collections"
+  },
   "Slab": {
     "eyebrow": "Interactive showcase",
     "title": "Turn the stone in your hands",
@@ -53,33 +60,38 @@
   },
   "Story": {
     "eyebrow": "The journey",
-    "title": "Where it comes from. What it becomes.",
+    "title": "One stone. A hundred-million-year story.",
     "skip": "Skip the story",
     "chapters": {
       "earth": {
-        "kicker": "Born of the earth",
-        "headline": "A hundred million years in the dark.",
-        "body": "Deep in the mountain, heat and pressure fold minerals into stone — patient, and never made the same way twice."
+        "kicker": "Born of fire",
+        "headline": "It began as fire.",
+        "body": "Deep underground, heat and unimaginable pressure forge raw minerals into stone — slowly, and never the same way twice.",
+        "alt": "Molten rock glowing orange from within the dark earth"
       },
       "unearthed": {
         "kicker": "Unearthed",
-        "headline": "Its first light.",
-        "body": "Freed from the quarry wall, the block breaks into daylight — tonnes of raw earth, lifted whole."
+        "headline": "Then it met the light.",
+        "body": "A single block breaks free of the quarry wall — tonnes of raw earth, lifted whole into the sun.",
+        "alt": "Towering white marble quarry wall with an excavator for scale"
       },
       "cut": {
-        "kicker": "The cut",
-        "headline": "What was always hidden inside.",
-        "body": "The saw opens the block and the veining appears — a pattern no other slab will ever repeat."
+        "kicker": "The reveal",
+        "headline": "One cut. A pattern no one has ever seen.",
+        "body": "The saw opens the block and the veins appear — a design nature draws just once, and never repeats.",
+        "alt": "Close-up of a sawn marble slab revealing its natural veining"
       },
       "craft": {
         "kicker": "The craft",
-        "headline": "Brought to life by hand.",
-        "body": "Under patient hands, raw becomes honed, and honed becomes a deep, mirror-still polish."
+        "headline": "Then human hands take over.",
+        "body": "Cut, calibrated and polished by hand until raw rock becomes a deep, mirror-still shine.",
+        "alt": "A stonemason's dust-covered hand guiding a chisel to carve a stone column"
       },
       "home": {
         "kicker": "The home",
-        "headline": "Where it finally belongs.",
-        "body": "It comes to rest in a kitchen, a hearth, a home — a piece of the earth, made to outlast us."
+        "headline": "And finally, it comes home.",
+        "body": "A kitchen. A hearth. A landmark. A piece of the earth, made to outlast us all.",
+        "alt": "A luxurious marble kitchen with a grand veined island at rest"
       }
     }
   },
@@ -159,7 +171,68 @@
     "missionTitle": "Our mission",
     "missionBody": "To bring the finest natural stone from Indian quarries to the world's most demanding projects, with uncompromising quality and service.",
     "visionTitle": "Our vision",
-    "visionBody": "To be the most trusted name in natural stone export — a true utopia of stone."
+    "visionBody": "To be the most trusted name in natural stone export — a true utopia of stone.",
+    "subtitle": "From quarries across India to landmark projects in 38+ countries — natural stone, delivered whole.",
+    "journey": {
+      "eyebrow": "Quarry to container",
+      "title": "How every slab reaches you"
+    },
+    "steps": {
+      "quarry": {
+        "label": "01 — At the source",
+        "title": "Blocks, hand-selected",
+        "alt": "Aerial view of large marble blocks spread across a sunlit quarry floor"
+      },
+      "manufacturing": {
+        "label": "02 — In our units",
+        "title": "Sawn, calibrated, finished",
+        "alt": "Rows of large finished stone slabs standing on racks inside a factory"
+      },
+      "export": {
+        "label": "03 — To the world",
+        "title": "Shipped, and on time",
+        "alt": "Rows of shipping containers at a port terminal in warm morning light"
+      }
+    }
+  },
+  "Careers": {
+    "eyebrow": "Careers at Granitopia",
+    "title": "Build a career carved in stone",
+    "whyTitle": "Why work with us",
+    "whyBody": "From the quarry face to the container yard, our people move exquisite natural stone to the world's finest projects. Join a hands-on, quarry-to-container team where craft, precision and pride in the material come first — and where good work travels to 38+ countries.",
+    "openRolesTitle": "Open roles",
+    "locationLabel": "Location",
+    "typeLabel": "Type",
+    "apply": "Apply now",
+    "ctaTitle": "Don't see your role?",
+    "ctaBody": "We're always glad to meet talented people who love natural stone. Tell us how you'd like to contribute.",
+    "ctaButton": "Get in touch",
+    "roles": {
+      "quarryLead": {
+        "title": "Quarry Operations Lead",
+        "location": "Karnataka, India",
+        "type": "Full-time",
+        "blurb": "Plan and run block extraction, drive safety and yield across the quarry face."
+      },
+      "exportSales": {
+        "title": "Export Sales Manager",
+        "location": "Bengaluru, India",
+        "type": "Full-time",
+        "blurb": "Grow our export desk and nurture stone buyers across 38+ countries."
+      },
+      "cncFinisher": {
+        "title": "CNC / Slab Finisher",
+        "location": "Rajasthan, India",
+        "type": "Full-time",
+        "blurb": "Cut, calibrate and hand-finish slabs to exacting tolerances on precision machines."
+      },
+      "logistics": {
+        "title": "Logistics Coordinator",
+        "location": "Chennai, India",
+        "type": "Full-time",
+        "blurb": "Orchestrate containers and documentation to ship 1,000+ loads a year on time."
+      }
+    }
   },
   "Contact": {
     "eyebrow": "Get in touch",

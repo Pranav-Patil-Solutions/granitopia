@@ -1,27 +1,20 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useMotionValueEvent,
   useScroll,
+  useTransform,
   type Variants,
 } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { Reveal } from "@/components/ui/Reveal";
-import { MarbleTexture } from "@/components/visual/MarbleTexture";
-import { getStone } from "@/data/stones";
 import { useReducedMotion } from "@/lib/motion";
-import { isHighPerfDevice } from "@/lib/webgl";
-import { CHAPTER_KEYS, STORY_STONE_SLUG } from "@/components/three/storyChapters";
-
-const StorySlab = dynamic(() => import("@/components/three/StorySlab"), {
-  ssr: false,
-});
+import { CHAPTER_KEYS, STORY_IMAGES } from "@/components/three/storyChapters";
 
 const N = CHAPTER_KEYS.length;
-const HERO = getStone(STORY_STONE_SLUG)!;
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const container: Variants = {
@@ -45,7 +38,6 @@ export function StoryScroller() {
   const reduced = useReducedMotion();
 
   const [cinematic, setCinematic] = useState(false);
-  const [post, setPost] = useState(false);
   const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -54,12 +46,16 @@ export function StoryScroller() {
     offset: ["start start", "end end"],
   });
 
+  // Continuous, scroll-driven push-in + drift (Ken Burns) for the pinned film —
+  // the stage never sits still, so the story feels like one unbroken shot.
+  const filmScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.24]);
+  const filmY = useTransform(scrollYProgress, [0, 1], ["-2.5%", "2.5%"]);
+
   useEffect(() => {
     const desktop =
       window.matchMedia("(min-width: 1024px)").matches &&
       window.matchMedia("(pointer: fine)").matches;
     setCinematic(!reduced && desktop);
-    setPost(isHighPerfDevice());
   }, [reduced]);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
@@ -79,13 +75,58 @@ export function StoryScroller() {
         ref={sectionRef}
         id="story"
         className="relative bg-[#0a0708]"
-        style={{ height: `${N * 100}vh` }}
+        style={{ height: `${N * 118}vh` }}
       >
         <div className="sticky top-0 h-screen w-full overflow-hidden">
-          {/* pinned film */}
-          <div className="absolute inset-0">
-            <StorySlab progress={scrollYProgress} mirror={rtl} post={post} />
-          </div>
+          {/* pinned film — cross-fading 4K photography, one shot per chapter.
+              Outer layer drifts + pushes in continuously with scroll; each shot
+              resolves from a soft, scaled-up blur into a sharp, settled frame. */}
+          <motion.div
+            className="absolute inset-0 bg-[#0a0708]"
+            style={{ scale: filmScale, y: filmY }}
+          >
+            {CHAPTER_KEYS.map((k, i) => {
+              const img = STORY_IMAGES[k];
+              const on = i === active;
+              return (
+                <motion.div
+                  key={k}
+                  className="absolute inset-0 will-change-[opacity,transform]"
+                  initial={false}
+                  animate={{
+                    opacity: on ? 1 : 0,
+                    scale: on ? 1 : 1.14,
+                    filter: on ? "blur(0px)" : "blur(18px)",
+                  }}
+                  transition={{
+                    opacity: { duration: 1.9, ease: EASE },
+                    scale: { duration: 2.8, ease: EASE },
+                    filter: { duration: 1.7, ease: EASE },
+                  }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={t(`chapters.${k}.alt`)}
+                    fill
+                    priority={i === 0}
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                </motion.div>
+              );
+            })}
+          </motion.div>
+
+          {/* fine film grain — cinematic texture over the whole stage */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-[0.09] mix-blend-soft-light"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+              backgroundSize: "140px 140px",
+            }}
+          />
 
           {/* legibility: vignette + top/bottom gradients (survive mood shifts) */}
           <div
@@ -93,7 +134,7 @@ export function StoryScroller() {
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "radial-gradient(120% 100% at 50% 45%, transparent 45%, rgba(0,0,0,0.5) 100%)",
+                "radial-gradient(115% 95% at 50% 42%, transparent 38%, rgba(0,0,0,0.66) 100%)",
             }}
           />
           <div
@@ -225,7 +266,13 @@ export function StoryScroller() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-line">
-                <MarbleTexture hero={HERO.heroColor} vein={HERO.veinColor} />
+                <Image
+                  src={STORY_IMAGES[key].src}
+                  alt={t(`chapters.${key}.alt`)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-black/10" />
               </div>
             </Reveal>

@@ -9,6 +9,7 @@ import { WHATSAPP_URL } from "@/lib/contact";
 const LINKS = [
   { key: "collections", href: "/collections" },
   { key: "about", href: "/about" },
+  { key: "careers", href: "/careers" },
   { key: "contact", href: "/contact" },
 ] as const;
 

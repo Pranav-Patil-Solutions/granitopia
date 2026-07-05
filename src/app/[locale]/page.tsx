@@ -2,7 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { VideoHero } from "@/components/hero/VideoHero";
 import { Stats } from "@/components/home/Stats";
 import { Marquee } from "@/components/fx/Marquee";
-import { SlabShowcase } from "@/components/three/SlabShowcase";
+import { StoneGallery } from "@/components/home/StoneGallery";
 import { StoryScroller } from "@/components/scroll/StoryScroller";
 import { SignatureShowcase } from "@/components/home/SignatureShowcase";
 import { QuoteCta } from "@/components/home/QuoteCta";
@@ -32,7 +32,7 @@ export default async function HomePage({
       <VideoHero />
       <Stats />
       <Marquee items={marqueeItems} />
-      <SlabShowcase />
+      <StoneGallery />
       <StoryScroller />
       <SignatureShowcase />
       <QuoteCta />
