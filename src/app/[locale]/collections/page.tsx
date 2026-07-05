@@ -29,11 +29,13 @@ export default async function CollectionsPage({
         title={t("title")}
         subtitle={t("subtitle")}
       />
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categoryOrder.map((c, i) => (
-            <CategoryCard key={c} category={c} index={i} />
-          ))}
+      <section className="bg-paper px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            {categoryOrder.map((c, i) => (
+              <CategoryCard key={c} category={c} index={i} />
+            ))}
+          </div>
         </div>
       </section>
     </main>

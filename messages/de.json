@@ -137,7 +137,7 @@
     "title": "Entdecken Sie unseren Stein",
     "subtitle": "Sechs Serien, gefertigt in vier indischen Werken und in über 38 Länder geliefert.",
     "viewCollection": "Kollektion ansehen",
-    "pieces": "{count} Steine",
+    "pieces": "{count, plural, one {# Stein} other {# Steine}}",
     "categoryBlurbs": {
       "granite": "Strapazierfähiger, zeitloser Granit für Arbeitsplatten, Böden und Fassaden.",
       "marble": "Leuchtender Marmor mit natürlicher Maserung für beeindruckende Innenräume.",
@@ -145,6 +145,14 @@
       "sandstone": "Natürlich strukturierter Sandstein für Pflaster, Verkleidung und Landschaftsbau.",
       "monuments": "Beständiger Granit für Denkmäler und Grabmale.",
       "tiles": "Robuste Fliesen und Pflastersteine für Böden, Wege und Außenbereiche."
+    },
+    "categoryAlt": {
+      "granite": "Polierte graue Granitfläche mit schwarzen Mineraleinschlüssen",
+      "marble": "Leuchtender weißer Marmor mit zarter grauer Aderung",
+      "exotics": "Exotische Steinplatte mit Wirbeln in Blau-, Gold- und Kupfertönen",
+      "sandstone": "Warmer goldener Sandstein mit natürlichen Sedimentschichten",
+      "monuments": "Ein gehauenes Granitdenkmal vor klarem Himmel",
+      "tiles": "Natursteinpflaster in einer gepflasterten Straße"
     }
   },
   "Category": {

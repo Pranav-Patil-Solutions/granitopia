@@ -137,7 +137,7 @@
     "title": "Explore our stone",
     "subtitle": "Six ranges, quarried and finished across four Indian units and shipped to 38+ countries.",
     "viewCollection": "View collection",
-    "pieces": "{count} stones",
+    "pieces": "{count, plural, one {# stone} other {# stones}}",
     "categoryBlurbs": {
       "granite": "Hard-wearing, timeless granite for countertops, flooring and façades.",
       "marble": "Luminous marble with natural veining for interiors that impress.",
@@ -145,6 +145,14 @@
       "sandstone": "Naturally textured sandstone for paving, cladding and landscaping.",
       "monuments": "Enduring granite selected for memorials and monuments.",
       "tiles": "Durable tiles and cobbles for flooring, paving and outdoor spaces."
+    },
+    "categoryAlt": {
+      "granite": "Polished grey granite surface flecked with black minerals",
+      "marble": "Luminous white marble with soft grey veining",
+      "exotics": "Exotic stone slab swirling with blue, gold and copper tones",
+      "sandstone": "Warm golden sandstone with natural sedimentary striations",
+      "monuments": "A carved granite monument figure against a clear sky",
+      "tiles": "Natural stone cobbles laid in a paved street"
     }
   },
   "Category": {
