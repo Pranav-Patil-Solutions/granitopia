@@ -1,6 +1,9 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Link } from "@/i18n/navigation";
+import { Reveal } from "@/components/ui/Reveal";
+import { RevealImage } from "@/components/ui/RevealImage";
 
 const ROLE_KEYS = [
   "quarryLead",
@@ -32,12 +35,29 @@ export default async function CareersPage({
     <main>
       <PageHeader eyebrow={t("eyebrow")} title={t("title")} />
 
-      {/* Why work here */}
-      <section className="mx-auto max-w-3xl px-6 py-20">
-        <h2 className="font-display text-2xl text-copper">{t("whyTitle")}</h2>
-        <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-          {t("whyBody")}
-        </p>
+      {/* Why work here — warm, human image paired with an aspirational statement */}
+      <section className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+          <RevealImage>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
+              <Image
+                src="/images/careers/team.jpg"
+                alt={t("imageAlt")}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </RevealImage>
+          <Reveal delay={0.05}>
+            <p className="text-xs uppercase tracking-[0.3em] text-copper">
+              {t("whyTitle")}
+            </p>
+            <p className="mt-6 font-display text-2xl leading-relaxed text-ink md:text-3xl">
+              {t("whyBody")}
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* Open roles */}
@@ -82,7 +102,7 @@ export default async function CareersPage({
       </section>
 
       {/* Open application CTA */}
-      <section className="mx-auto max-w-3xl px-6 py-20 text-center">
+      <section className="mx-auto max-w-3xl px-6 py-24 text-center md:py-28">
         <h2 className="font-display text-3xl text-ink md:text-4xl">
           {t("ctaTitle")}
         </h2>
