@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Logo } from "@/components/brand/Logo";
 import { prefersReducedMotion } from "@/lib/motion";
 
 const KEY = "granitopia-preloaded";
@@ -12,6 +13,11 @@ export function Preloader() {
 
   useEffect(() => {
     if (prefersReducedMotion() || sessionStorage.getItem(KEY)) return;
+    // Whether to show the curtain is a client-only decision (sessionStorage +
+    // reduced-motion) that also gates the framer-motion exit animation, so it
+    // can't be a lazy initial state without an SSR/hydration mismatch. The one
+    // synchronous setState here is intentional and runs once on first visit.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setShow(true);
     document.body.style.overflow = "hidden";
     const t = setTimeout(() => {
@@ -38,9 +44,13 @@ export function Preloader() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-2xl font-semibold tracking-[0.35em] text-copper"
+            className="text-white"
           >
-            GRANITOPIA
+            <Logo
+              variant="lockup"
+              markClassName="h-12 w-12"
+              wordmarkClassName="text-[2rem]"
+            />
           </motion.div>
           <div className="mt-6 h-px w-40 overflow-hidden bg-white/15">
             <motion.div

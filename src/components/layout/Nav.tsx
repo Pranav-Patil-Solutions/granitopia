@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { Logo } from "@/components/brand/Logo";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const LINKS = [
@@ -43,9 +44,10 @@ export function Nav() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link
           href="/"
-          className="font-display text-lg font-semibold tracking-[0.25em] text-copper"
+          aria-label="Granitopia — home"
+          className="text-ink transition-opacity hover:opacity-80"
         >
-          GRANITOPIA
+          <Logo variant="lockup" />
         </Link>
 
         {/* Desktop links */}

@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { Logo } from "@/components/brand/Logo";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 
 export function Footer() {
@@ -28,9 +29,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="font-display text-2xl font-semibold tracking-[0.2em] text-copper">
-              GRANITOPIA
-            </div>
+            <Logo variant="lockup" className="text-white" wordmarkClassName="text-[1.5rem]" />
             <p className="mt-3 text-sm text-white/50">{t("tagline")}</p>
           </div>
 

@@ -76,14 +76,8 @@ export function VideoHero() {
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
         {/* Layered scrim: lifts contrast behind the headline, lets the image
-            breathe at the edges. */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(120% 85% at 50% 42%, rgba(255,255,255,0.58), rgba(255,255,255,0.34) 48%, rgba(255,255,255,0.18) 100%)",
-          }}
-        />
+            breathe at the edges. Theme-aware (light wash / dark veil). */}
+        <div className="hero-scrim absolute inset-0" />
         <div className="bg-vignette absolute inset-0" />
         <div className="hero-grain absolute inset-0" />
       </motion.div>
@@ -107,7 +101,7 @@ export function VideoHero() {
         </motion.p>
 
         {/* Kinetic word-reveal headline */}
-        <h1 className="mt-6 font-display text-6xl leading-[0.92] text-ink drop-shadow-[0_2px_16px_rgba(255,255,255,0.5)] md:text-[8.5rem]">
+        <h1 className="hero-title mt-6 font-display text-6xl leading-[0.92] text-ink md:text-[8.5rem]">
           {words.map((w, i) => (
             <span key={i} className="inline-block overflow-hidden align-bottom">
               <motion.span
