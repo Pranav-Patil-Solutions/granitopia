@@ -31,6 +31,47 @@ const item: Variants = {
   },
 };
 
+/**
+ * Skip-the-story affordance — ONE spec, two placements (loop-engineered): the
+ * pinned dark film (tone="onDark") and the light intro header (tone="onLight").
+ * A hairline pill with an arrow glyph that reads at a glance but stays tasteful
+ * and strictly INLINE — it's just an anchor to #featured (= skip the story), no
+ * overlay / popup / toast. Copy is the existing t("skip"), unchanged.
+ */
+function SkipStory({
+  tone,
+  className = "",
+}: {
+  tone: "onDark" | "onLight";
+  className?: string;
+}) {
+  const t = useTranslations("Story");
+  const tones = {
+    // Frosted glass: stays readable over ANY Journey frame, even the brightest
+    // (the plain white/45 link died over the daylight quarry shot).
+    onDark:
+      "border-white/30 bg-black/25 text-white/90 backdrop-blur-sm hover:border-copper-bright hover:bg-black/35 hover:text-copper-bright focus-visible:ring-copper-bright",
+    // Semantic tokens: reads on bg-paper-2 in light AND flips with dark mode.
+    onLight:
+      "border-line bg-paper text-ink hover:border-copper hover:text-copper focus-visible:ring-copper",
+  } as const;
+  return (
+    <a
+      href="#featured"
+      aria-label={t("skip")}
+      className={`group inline-flex min-h-11 items-center gap-1.5 rounded-full border px-3.5 py-2 text-[11px] uppercase tracking-[0.25em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 ${tones[tone]} ${className}`}
+    >
+      {t("skip")}
+      <span
+        aria-hidden
+        className="text-sm leading-none transition-transform group-hover:translate-y-0.5"
+      >
+        ↓
+      </span>
+    </a>
+  );
+}
+
 export function StoryScroller() {
   const t = useTranslations("Story");
   const locale = useLocale();
@@ -55,6 +96,9 @@ export function StoryScroller() {
     const desktop =
       window.matchMedia("(min-width: 1024px)").matches &&
       window.matchMedia("(pointer: fine)").matches;
+    // Client-only device check (matchMedia) → can't be an initial state without
+    // an SSR/hydration mismatch. Pre-existing; annotated so the file lints clean.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCinematic(!reduced && desktop);
   }, [reduced]);
 
@@ -156,12 +200,8 @@ export function StoryScroller() {
             <h2 className="mt-2 max-w-xs font-display text-xl leading-tight text-white/90 md:text-2xl">
               {t("title")}
             </h2>
-            <a
-              href="#featured"
-              className="mt-4 inline-block text-[11px] uppercase tracking-[0.3em] text-white/45 underline-offset-4 transition-colors hover:text-copper-bright hover:underline"
-            >
-              {t("skip")} ↓
-            </a>
+            {/* Persistent within the pinned frame → reachable throughout the story */}
+            <SkipStory tone="onDark" className="mt-4" />
           </div>
 
           {/* active chapter — masked, staggered reveal */}
@@ -236,12 +276,9 @@ export function StoryScroller() {
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl leading-tight text-ink md:text-6xl">
             {t("title")}
           </h2>
-          <a
-            href="#featured"
-            className="mt-6 inline-block text-[11px] uppercase tracking-[0.3em] text-ink-soft underline-offset-4 transition-colors hover:text-copper hover:underline"
-          >
-            {t("skip")} ↓
-          </a>
+          <div className="mt-6">
+            <SkipStory tone="onLight" />
+          </div>
         </Reveal>
       </div>
 
