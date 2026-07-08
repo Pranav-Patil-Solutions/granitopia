@@ -22,7 +22,6 @@ export default async function HomePage({
     feat("categories.marble"),
     feat("categories.exotics"),
     feat("categories.sandstone"),
-    feat("categories.monuments"),
     feat("categories.tiles"),
     `${stats("countries")} ${stats("countriesLabel")}`,
   ];
