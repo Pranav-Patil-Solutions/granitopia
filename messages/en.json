@@ -25,12 +25,21 @@
     "title": "A quarry-to-container powerhouse",
     "countries": "38+",
     "countriesLabel": "Countries served",
-    "area": "600,000+",
+    "area": "200,000",
     "areaLabel": "Square metres / year",
-    "containers": "1,000+",
+    "containers": "35",
     "containersLabel": "Containers shipped / year",
     "units": "4",
     "unitsLabel": "Manufacturing units"
+  },
+  "Prestige": {
+    "aria": "Credentials",
+    "supplied": "Supplied to",
+    "airports": "International airports",
+    "shipped": "Shipped to",
+    "countries": "{count} countries",
+    "throughput": "Throughput",
+    "containers": "{count} containers / year"
   },
   "Gallery": {
     "eyebrow": "The gallery",
@@ -199,7 +208,7 @@
     "lead": "Granitopia Stones International LLP is an exporter of exquisite natural stone, delivering granite, marble, quartzite and more to over 38 countries.",
     "p1": "From strategically located quarries across India, we select blocks for colour, grain and structural integrity — the foundation of every great slab.",
     "p2": "Across four manufacturing units, blocks are gang-sawn, calibrated and finished by master craftsmen and precision machines to exacting tolerances.",
-    "p3": "Every year we process over 600,000 square metres and ship more than 1,000 containers — reliably, and on time.",
+    "p3": "Every year we process 200,000 square metres and ship 35 containers — reliably, and on time.",
     "missionTitle": "Our mission",
     "missionBody": "To bring the finest natural stone from Indian quarries to the world's most demanding projects, with uncompromising quality and service.",
     "visionTitle": "Our vision",
@@ -262,7 +271,7 @@
         "title": "Logistics Coordinator",
         "location": "Chennai, India",
         "type": "Full-time",
-        "blurb": "Orchestrate containers and documentation to ship 1,000+ loads a year on time."
+        "blurb": "Orchestrate containers and documentation to ship 35 loads a year on time."
       }
     },
     "imageAlt": "A stonemason absorbed in finishing a carved stone piece at golden hour"

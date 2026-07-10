@@ -25,12 +25,21 @@
     "title": "Vom Steinbruch bis zum Container",
     "countries": "38+",
     "countriesLabel": "Belieferte Länder",
-    "area": "600.000+",
+    "area": "200.000",
     "areaLabel": "Quadratmeter / Jahr",
-    "containers": "1.000+",
+    "containers": "35",
     "containersLabel": "Container / Jahr",
     "units": "4",
     "unitsLabel": "Produktionsstätten"
+  },
+  "Prestige": {
+    "aria": "Referenzen",
+    "supplied": "Geliefert an",
+    "airports": "Internationale Flughäfen",
+    "shipped": "Versand in",
+    "countries": "{count} Länder",
+    "throughput": "Durchsatz",
+    "containers": "{count} Container / Jahr"
   },
   "Gallery": {
     "eyebrow": "Die Galerie",
@@ -199,7 +208,7 @@
     "lead": "Granitopia Stones International LLP ist ein Exporteur exquisiter Natursteine und liefert Granit, Marmor, Quarzit und mehr in über 38 Länder.",
     "p1": "Aus strategisch gelegenen Steinbrüchen in ganz Indien wählen wir Blöcke nach Farbe, Maserung und Struktur – die Grundlage jeder großartigen Platte.",
     "p2": "In vier Produktionsstätten werden Blöcke gesägt, kalibriert und von Meistern und Präzisionsmaschinen auf engste Toleranzen veredelt.",
-    "p3": "Jährlich verarbeiten wir über 600.000 Quadratmeter und verschiffen mehr als 1.000 Container – zuverlässig und termingerecht.",
+    "p3": "Jährlich verarbeiten wir 200.000 Quadratmeter und verschiffen 35 Container – zuverlässig und termingerecht.",
     "missionTitle": "Unsere Mission",
     "missionBody": "Den feinsten Naturstein aus indischen Steinbrüchen zu den anspruchsvollsten Projekten der Welt zu bringen – mit kompromissloser Qualität und Service.",
     "visionTitle": "Unsere Vision",
@@ -262,7 +271,7 @@
         "title": "Logistikkoordinator",
         "location": "Chennai, Indien",
         "type": "Vollzeit",
-        "blurb": "Steuern Sie Container und Dokumente, um jährlich über 1.000 Ladungen pünktlich zu verschiffen."
+        "blurb": "Steuern Sie Container und Dokumente, um jährlich 35 Ladungen pünktlich zu verschiffen."
       }
     },
     "imageAlt": "Ein Steinmetz bei der Feinbearbeitung eines gehauenen Steins im goldenen Abendlicht"

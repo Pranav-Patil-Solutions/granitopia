@@ -253,6 +253,45 @@ h3 {
   }
 }
 
+/* ---- GRN-123: holographic sheen — used ONLY on the supplied-to-airports
+   mark in the Prestige strip. Metallic copper→gold→copper-bright gradient
+   clipped to the text with a slow back-and-forth background-position sweep;
+   close warm hues keep it reading as a sheen, not a rainbow. Falls back to
+   plain copper text where background-clip: text is unsupported. ---- */
+.holo-mark {
+  color: var(--color-copper);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .holo-mark {
+    background-image: linear-gradient(
+      105deg,
+      var(--color-copper) 0%,
+      var(--color-gold) 24%,
+      var(--color-copper-bright) 42%,
+      var(--color-gold) 60%,
+      var(--color-copper) 82%,
+      var(--color-copper) 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: holo-sweep 9s ease-in-out infinite;
+  }
+}
+@keyframes holo-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  55% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
 /* Respect reduced-motion everywhere */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -267,5 +306,8 @@ h3 {
   }
   .marquee-track {
     animation: none;
+  }
+  .holo-mark {
+    animation: none; /* static gradient, zero motion */
   }
 }

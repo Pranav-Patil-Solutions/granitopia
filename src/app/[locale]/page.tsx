@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { VideoHero } from "@/components/hero/VideoHero";
 import { Stats } from "@/components/home/Stats";
+import { Prestige } from "@/components/home/Prestige";
 import { Marquee } from "@/components/fx/Marquee";
 import { StoneGallery } from "@/components/home/StoneGallery";
 import { StoryScroller } from "@/components/scroll/StoryScroller";
@@ -31,6 +32,7 @@ export default async function HomePage({
     <main>
       <VideoHero />
       <Stats />
+      <Prestige />
       <Marquee items={marqueeItems} />
       <StoneGallery />
       <StoryScroller />
