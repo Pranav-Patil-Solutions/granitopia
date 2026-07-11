@@ -19,7 +19,7 @@ Use these real facts; never fabricate numbers, products, or contact details.
 - **Product categories:** Granite, Marble, Exotics, Monuments, Sandstone/Limestone/Slate,
   Tiles & Cobbles. Real named stones live in `src/data/stones.ts` (e.g. Absolute Black,
   Black Galaxy, Brown Fantasy, Crystallo Divine, Rainforest Green, Tan Brown).
-- **Stats (only these):** 38+ countries · 600,000+ SQM/year · 1,000+ containers/year ·
+- **Stats (only these):** 38+ countries · 200,000 SQM/year · 35 containers/year ·
   4 manufacturing units.
 - **Contact:** sales@granitopia.com · +91 799 699 6655 (phone/WhatsApp) · Bengaluru,
   Karnataka, India (Jigani). Keep in sync with `src/lib/contact.ts`.

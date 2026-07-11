@@ -259,18 +259,31 @@ h3 {
    close warm hues keep it reading as a sheen, not a rainbow. Falls back to
    plain copper text where background-clip: text is unsupported. ---- */
 .holo-mark {
-  color: var(--color-copper);
+  /* Light-theme stops are deepened so the small mark stays ≥4.5:1 on
+     paper-2 (plain copper/gold measured ~2.3–3.6:1 — code-review finding);
+     dark theme keeps the brighter metals, which already pass. */
+  --holo-a: var(--color-copper-deep);
+  --holo-b: #8a6512;
+  --holo-c: #9c6015;
+  color: var(--holo-a);
+}
+@media (prefers-color-scheme: dark) {
+  .holo-mark {
+    --holo-a: var(--color-copper);
+    --holo-b: var(--color-gold);
+    --holo-c: var(--color-copper-bright);
+  }
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .holo-mark {
     background-image: linear-gradient(
       105deg,
-      var(--color-copper) 0%,
-      var(--color-gold) 24%,
-      var(--color-copper-bright) 42%,
-      var(--color-gold) 60%,
-      var(--color-copper) 82%,
-      var(--color-copper) 100%
+      var(--holo-a) 0%,
+      var(--holo-b) 24%,
+      var(--holo-c) 42%,
+      var(--holo-b) 60%,
+      var(--holo-a) 82%,
+      var(--holo-a) 100%
     );
     background-size: 300% 100%;
     background-position: 100% 0;
