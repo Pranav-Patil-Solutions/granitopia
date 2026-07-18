@@ -3,7 +3,7 @@
  * granitopia.com (granite, marble and exotics), with the real product photos
  * self-hosted under /public/images/stones and hero/vein colours sampled from
  * each photo. The named ranges (granite / marble / exotics) are the live
- * catalogue; the sandstone / monuments / tiles entries below are representative
+ * catalogue; the sandstone / tiles entries below are representative
  * examples (the source lists those ranges only as unnamed image tiles).
  *
  * Detail copy: eight flagship stones keep hand-written blurbs + specs
@@ -20,7 +20,6 @@ export type Finish = "polished" | "leathered" | "honed" | "flamed";
 export type StoneCategory =
   | "granite"
   | "marble"
-  | "monuments"
   | "exotics"
   | "sandstone"
   | "tiles";
@@ -1032,21 +1031,6 @@ export const stones: Stone[] = [
     bespoke: true,
   },
   {
-    slug: "mahogany",
-    name: "Mahogany",
-    category: "monuments",
-    image: "/images/stones/mahogany.jpg",
-    heroColor: "#4a2b28",
-    veinColor: "#7a3a2f",
-    finishes: ["polished", "flamed"],
-    origin: "Rajasthan, India",
-    thickness: "As per drawing",
-    applications: ["Memorials", "Headstones", "Plaques"],
-    blurb:
-      "A deep red-brown granite favoured for enduring memorials and monuments.",
-    bespoke: true,
-  },
-  {
     slug: "tandur-grey",
     name: "Tandur Grey",
     category: "tiles",
@@ -1081,7 +1065,6 @@ export const categoryOrder: StoneCategory[] = [
   "marble",
   "exotics",
   "sandstone",
-  "monuments",
   "tiles",
 ];
 

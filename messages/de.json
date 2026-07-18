@@ -114,7 +114,6 @@
     "categories": {
       "granite": "Granit",
       "marble": "Marmor",
-      "monuments": "Monumente",
       "exotics": "Exoten",
       "sandstone": "Sandstein",
       "tiles": "Fliesen & Pflaster"
@@ -152,7 +151,6 @@
       "marble": "Leuchtender Marmor mit natürlicher Maserung für beeindruckende Innenräume.",
       "exotics": "Seltene Farben und dramatische Bewegung für markante Oberflächen.",
       "sandstone": "Natürlich strukturierter Sandstein für Pflaster, Verkleidung und Landschaftsbau.",
-      "monuments": "Beständiger Granit für Denkmäler und Grabmale.",
       "tiles": "Robuste Fliesen und Pflastersteine für Böden, Wege und Außenbereiche."
     },
     "categoryAlt": {
@@ -160,7 +158,6 @@
       "marble": "Leuchtender weißer Marmor mit zarter grauer Aderung",
       "exotics": "Exotische Steinplatte mit Wirbeln in Blau-, Gold- und Kupfertönen",
       "sandstone": "Warmer goldener Sandstein mit natürlichen Sedimentschichten",
-      "monuments": "Ein gehauenes Granitdenkmal vor klarem Himmel",
       "tiles": "Natursteinpflaster in einer gepflasterten Straße"
     }
   },
@@ -414,7 +411,6 @@
       "crystallo-divine": "Ein durchscheinender, kristalliner Exot, der hinterleuchtet erstrahlt – purer Luxus.",
       "patagonia": "Kühne, gletscherartige Bewegung in einem seltenen Exoten – ein echter Blickfang.",
       "mint-sandstone": "Ein sanfter grün-grauer Sandstein, von Natur aus rutschfest für Pflaster und Fassaden.",
-      "mahogany": "Ein tiefroter-brauner Granit, geschätzt für beständige Gedenkstätten und Denkmäler.",
       "tandur-grey": "Ein strapazierfähiger grauer Kalkstein, ideal für Bodenbeläge, Pflasterung und Pflastersteine."
     },
     "origins": {
