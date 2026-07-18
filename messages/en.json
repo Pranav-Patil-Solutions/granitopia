@@ -114,7 +114,6 @@
     "categories": {
       "granite": "Granite",
       "marble": "Marble",
-      "monuments": "Monuments",
       "exotics": "Exotics",
       "sandstone": "Sandstone",
       "tiles": "Tiles & Cobbles"
@@ -152,7 +151,6 @@
       "marble": "Luminous marble with natural veining for interiors that impress.",
       "exotics": "Rare colours and dramatic movement for statement surfaces.",
       "sandstone": "Naturally textured sandstone for paving, cladding and landscaping.",
-      "monuments": "Enduring granite selected for memorials and monuments.",
       "tiles": "Durable tiles and cobbles for flooring, paving and outdoor spaces."
     },
     "categoryAlt": {
@@ -160,7 +158,6 @@
       "marble": "Luminous white marble with soft grey veining",
       "exotics": "Exotic stone slab swirling with blue, gold and copper tones",
       "sandstone": "Warm golden sandstone with natural sedimentary striations",
-      "monuments": "A carved granite monument figure against a clear sky",
       "tiles": "Natural stone cobbles laid in a paved street"
     }
   },
@@ -414,7 +411,6 @@
       "crystallo-divine": "A translucent, crystalline exotic that glows when backlit — pure luxury.",
       "patagonia": "Bold, glacier-like movement in a rare exotic — a true statement stone.",
       "mint-sandstone": "A soft green-grey sandstone, naturally slip-resistant for paving and façades.",
-      "mahogany": "A deep red-brown granite favoured for enduring memorials and monuments.",
       "tandur-grey": "A hard-wearing grey limestone, ideal for flooring, paving and cobbles."
     },
     "origins": {
