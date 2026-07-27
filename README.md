@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Granitopia
 
-## Getting Started
+An immersive, motion-rich **3D marketing site** — a premium brand experience built with real-time WebGL, cinematic scroll, and full internationalization.
 
-First, run the development server:
+## Highlights
+
+- **Real-time 3D** with [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) + [`three`](https://threejs.org), composited with `@react-three/postprocessing` for depth-of-field, bloom, and grading.
+- **Cinematic motion** — [GSAP](https://gsap.com) timelines and [Framer Motion](https://www.framer.com/motion/) transitions synced to [Lenis](https://lenis.darkroom.engineering) smooth-scroll.
+- **Internationalized** out of the box via [`next-intl`](https://next-intl-docs.vercel.app) with locale-based routing (`/[locale]`).
+- **Type-safe forms** with `react-hook-form` + `zod`, and privacy-friendly `@vercel/analytics`.
+
+## Stack
+
+Next.js (App Router) · React 19 · TypeScript · Three.js / R3F · GSAP · Framer Motion · Lenis · next-intl · Tailwind · Zod
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm run build && npm start   # production
+npm run smoke:cursor         # locale + cursor interaction smoke test
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/app/[locale]/   locale-routed pages (i18n)
+messages/           translation catalogs
+src/                3D scenes, motion, and UI components
+tests/e2e/          interaction smoke tests
+```
