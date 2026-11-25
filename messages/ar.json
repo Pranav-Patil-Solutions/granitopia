@@ -65,7 +65,9 @@
       "showroom": "صالة عرض",
       "evening": "مسائي"
     },
-    "viewStone": "عرض هذا الحجر"
+    "viewStone": "عرض هذا الحجر",
+    "viewSlab": "عرض اللوح",
+    "viewPhoto": "عرض الصورة"
   },
   "Story": {
     "eyebrow": "الرحلة",
@@ -146,6 +148,13 @@
     "title": "استكشف أحجارنا",
     "subtitle": "ست مجموعات، تُصنع في أربع وحدات هندية وتُشحن إلى أكثر من 38 دولة.",
     "metaDescription": "غرانيت ورخام وأحجار نادرة وحجر رملي وبلاط من غرانيتوبيا — حجر طبيعي يُجهَّز في الهند ويُشحن إلى أكثر من 38 دولة.",
+    "searchLabel": "ابحث في الأحجار",
+    "searchPlaceholder": "ابحث بالاسم",
+    "filterCategory": "المادة",
+    "filterFinish": "التشطيب",
+    "all": "الكل",
+    "noResults": "لا توجد أحجار تطابق هذه التصفية.",
+    "clear": "مسح",
     "viewCollection": "عرض المجموعة",
     "pieces": "{count, plural, one {حجر واحد} two {حجران} few {# أحجار} other {# حجر}}",
     "categoryBlurbs": {

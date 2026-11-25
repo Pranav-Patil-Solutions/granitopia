@@ -26,8 +26,8 @@ export function LocaleSwitcher() {
             aria-current={loc === locale ? "true" : undefined}
             className={
               loc === locale
-                ? "text-copper"
-                : "text-ink-soft transition-colors hover:text-ink"
+                ? "inline-flex min-h-11 min-w-11 items-center justify-center text-copper"
+                : "inline-flex min-h-11 min-w-11 items-center justify-center text-ink-soft transition-colors hover:text-ink"
             }
           >
             {LABELS[loc]}

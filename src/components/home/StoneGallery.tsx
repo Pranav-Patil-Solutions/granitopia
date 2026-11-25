@@ -17,7 +17,7 @@ export function StoneGallery() {
   return (
     <section
       id="gallery"
-      className="relative overflow-hidden border-t border-white/10 px-6 py-24 md:py-32"
+      className="relative overflow-hidden border-t border-white/10 px-5 py-16 sm:px-8 md:py-28"
       style={{
         background:
           "linear-gradient(180deg, #241d1a 0%, #1a1512 58%, #141010 100%)",

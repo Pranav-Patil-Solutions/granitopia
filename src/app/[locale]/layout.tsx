@@ -23,19 +23,22 @@ import "../globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
+  weight: ["500", "600"],
   variable: "--font-fraunces",
   display: "swap",
 });
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-inter",
   display: "swap",
 });
 const plexArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500"],
   variable: "--font-plex-arabic",
   display: "swap",
+  preload: false,
 });
 
 export function generateStaticParams() {
@@ -88,7 +91,9 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={isRtl(locale) ? "rtl" : "ltr"}
-      className={`${fraunces.variable} ${inter.variable} ${plexArabic.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} ${
+        locale === "ar" ? plexArabic.variable : ""
+      } h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-ink">
         <JsonLd data={organizationJsonLd(meta("description"))} />

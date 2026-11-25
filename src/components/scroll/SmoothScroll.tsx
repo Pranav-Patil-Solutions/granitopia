@@ -12,7 +12,9 @@ import { prefersReducedMotion } from "@/lib/motion";
  */
 export function SmoothScroll() {
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    const compact = window.matchMedia("(max-width: 1023px)").matches;
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    if (prefersReducedMotion() || compact || coarse) return;
 
     gsap.registerPlugin(ScrollTrigger);
 

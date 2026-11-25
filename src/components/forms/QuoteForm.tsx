@@ -42,7 +42,7 @@ const resolver: Resolver<QuotePayload> = async (values) => {
 };
 
 const inputCls =
-  "w-full rounded-sm border border-line bg-paper px-4 py-3 text-ink outline-none transition-colors focus:border-copper aria-[invalid=true]:border-red-600";
+    "w-full min-h-12 rounded-sm border border-line bg-paper px-4 py-3 text-base text-ink outline-none transition-colors focus:border-copper aria-[invalid=true]:border-red-600";
 const labelCls = "mb-1 block text-xs uppercase tracking-widest text-ink-soft";
 const errCls = "mt-1 text-xs text-red-600";
 

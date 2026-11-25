@@ -9,7 +9,7 @@ import {
   stonesInCategory,
   type StoneCategory,
 } from "@/data/stones";
-import { StoneCard } from "@/components/collections/StoneCard";
+import { StoneCatalog } from "@/components/collections/StoneCatalog";
 import { brandedTitle, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -59,7 +59,7 @@ export default async function CategoryPage({
           paper. A strong top-down paper scrim keeps the (global, dark-on-light)
           nav and the editorial heading readable over any category image, light
           or dark, while the photo breathes toward the bottom. */}
-      <section className="relative flex min-h-[56vh] flex-col overflow-hidden">
+      <section className="relative flex min-h-[42vh] flex-col overflow-hidden sm:min-h-[48vh]">
         <Image
           src={categoryImage(cat)}
           alt={c(`categoryAlt.${cat}`)}
@@ -69,7 +69,7 @@ export default async function CategoryPage({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-paper via-paper/85 to-paper/20" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-36">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-14">
           <Link
             href="/collections"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-copper transition-opacity hover:opacity-70"
@@ -80,7 +80,7 @@ export default async function CategoryPage({
           <p className="mt-10 text-xs uppercase tracking-[0.3em] text-copper">
             {cta("inThisCollection")}
           </p>
-          <h1 className="mt-4 font-display text-5xl leading-tight text-ink md:text-7xl">
+          <h1 className="mt-4 max-w-4xl font-display text-4xl leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-7xl">
             {t(`categories.${cat}`)}
           </h1>
           <p className="mt-5 max-w-xl text-ink-soft md:text-lg">
@@ -93,13 +93,9 @@ export default async function CategoryPage({
       </section>
 
       {/* Stones in this range */}
-      <section className="bg-paper px-6 py-24 md:py-32">
+      <section className="bg-paper px-5 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-            {items.map((s, i) => (
-              <StoneCard key={s.slug} stone={s} index={i} />
-            ))}
-          </div>
+          <StoneCatalog category={cat} />
         </div>
       </section>
     </main>

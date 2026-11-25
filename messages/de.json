@@ -65,7 +65,9 @@
       "showroom": "Showroom",
       "evening": "Abendlicht"
     },
-    "viewStone": "Diesen Stein ansehen"
+    "viewStone": "Diesen Stein ansehen",
+    "viewSlab": "Platte ansehen",
+    "viewPhoto": "Foto ansehen"
   },
   "Story": {
     "eyebrow": "Die Reise",
@@ -146,6 +148,13 @@
     "title": "Entdecken Sie unseren Stein",
     "subtitle": "Sechs Serien, gefertigt in vier indischen Werken und in über 38 Länder geliefert.",
     "metaDescription": "Granit, Marmor, Exoten, Sandstein sowie Fliesen und Pflaster von Granitopia — Naturstein aus Indien, geliefert in über 38 Länder.",
+    "searchLabel": "Steine suchen",
+    "searchPlaceholder": "Nach Namen suchen",
+    "filterCategory": "Material",
+    "filterFinish": "Oberfläche",
+    "all": "Alle",
+    "noResults": "Keine Steine passen zu dieser Auswahl.",
+    "clear": "Zurücksetzen",
     "viewCollection": "Kollektion ansehen",
     "pieces": "{count, plural, one {# Stein} other {# Steine}}",
     "categoryBlurbs": {

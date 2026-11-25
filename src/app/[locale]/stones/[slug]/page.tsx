@@ -69,7 +69,7 @@ export default async function StonePage({
   ];
 
   return (
-    <main className="pt-28">
+    <main>
       <JsonLd
         data={productJsonLd({
           name: stone.name,
@@ -86,7 +86,7 @@ export default async function StonePage({
         })}
       />
       {/* Breadcrumb — keeps the top light so the (transparent) nav stays legible */}
-      <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-6 pt-8">
+      <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 sm:pt-8">
         <ol className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-ink-soft">
           <li>
             <Link href="/collections" className="transition-colors hover:text-copper">
@@ -112,7 +112,7 @@ export default async function StonePage({
       </nav>
 
       {/* Viewer + details */}
-      <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+      <section className="mx-auto max-w-7xl px-5 py-10 sm:px-8 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <StoneViewer stone={stone} />
 
@@ -120,7 +120,7 @@ export default async function StonePage({
             <p className="text-xs uppercase tracking-[0.3em] text-copper">
               {cat(`categories.${stone.category}`)}
             </p>
-            <h1 className="mt-3 font-display text-4xl leading-tight text-ink md:text-6xl">
+            <h1 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight text-ink sm:text-6xl">
               {stone.name}
             </h1>
             <p className="mt-5 max-w-md text-ink-soft md:text-lg">
@@ -130,10 +130,10 @@ export default async function StonePage({
             </p>
 
             {/* Primary path to a quote — surfaced high */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href={{ pathname: "/contact", query: { stone: stone.slug } }}
-                className="inline-block rounded-full bg-copper-deep px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white transition-transform hover:scale-105"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-copper-deep px-8 text-sm font-medium uppercase tracking-widest text-white"
               >
                 {t("requestThis")}
               </Link>
@@ -141,7 +141,7 @@ export default async function StonePage({
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full border border-copper px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-copper-deep transition-colors hover:bg-copper-deep hover:text-white"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-copper px-8 text-sm font-medium uppercase tracking-widest text-copper-deep"
               >
                 {nav("whatsapp")}
               </a>
