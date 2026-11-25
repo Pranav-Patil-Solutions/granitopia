@@ -33,10 +33,10 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-dark px-6 pb-10 pt-20 text-white/70"
+      className="bg-dark px-5 pb-10 pt-16 text-white/70 sm:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
             <Logo variant="lockup" className="text-white" wordmarkClassName="text-[1.5rem]" />
@@ -54,7 +54,7 @@ export function Footer() {
             </p>
             <a
               href={`tel:${PHONE_TEL}`}
-              className="transition-colors hover:text-copper"
+              className="inline-flex min-h-11 items-center transition-colors hover:text-copper"
             >
               <bdi dir="ltr">{PHONE_DISPLAY}</bdi>
             </a>
@@ -63,7 +63,7 @@ export function Footer() {
             </p>
             <a
               href={`mailto:${EMAIL}`}
-              className="transition-colors hover:text-copper"
+              className="inline-flex min-h-11 items-center transition-colors hover:text-copper"
             >
               {EMAIL}
             </a>
@@ -77,7 +77,7 @@ export function Footer() {
             <ul className="space-y-2">
               {explore.map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} className="transition-colors hover:text-copper">
+                  <Link href={l.href} className="inline-flex min-h-11 items-center transition-colors hover:text-copper">
                     {l.label}
                   </Link>
                 </li>
@@ -85,7 +85,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="transition-colors hover:text-copper"
+                  className="inline-flex min-h-11 items-center transition-colors hover:text-copper"
                 >
                   {nav("careers")}
                 </Link>
@@ -95,7 +95,7 @@ export function Footer() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-copper"
+                  className="inline-flex min-h-11 items-center transition-colors hover:text-copper"
                 >
                   {nav("whatsapp")}
                 </a>
@@ -113,7 +113,7 @@ export function Footer() {
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="transition-colors hover:text-copper"
+                    className="inline-flex min-h-11 items-center transition-colors hover:text-copper"
                   >
                     {l.label}
                   </Link>

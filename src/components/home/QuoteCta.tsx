@@ -3,8 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
-import { Magnetic } from "@/components/fx/Magnetic";
-import { MarbleTexture } from "@/components/visual/MarbleTexture";
+import Image from "next/image";
 import { getStone } from "@/data/stones";
 import { WHATSAPP_URL } from "@/lib/contact";
 
@@ -15,10 +14,17 @@ export function QuoteCta() {
   return (
     <section
       id="quote"
-      className="relative overflow-hidden border-t border-white/10 px-6 py-28 md:py-40"
+      className="relative overflow-hidden border-t border-line px-5 py-20 sm:px-8 md:py-32"
     >
-      {/* Full-bleed macro stone backdrop + dark scrim */}
-      {stone && <MarbleTexture hero={stone.heroColor} vein={stone.veinColor} />}
+      {stone && (
+        <Image
+          src={stone.image}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      )}
       <div className="absolute inset-0 bg-black/70" />
       <div
         aria-hidden
@@ -40,20 +46,18 @@ export function QuoteCta() {
           <p className="mx-auto mt-6 max-w-xl text-white/70 md:text-lg">
             {t("body")}
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Magnetic>
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/contact"
-                className="inline-block rounded-full bg-copper-deep px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white transition-transform hover:scale-105"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-copper-deep px-8 text-sm font-medium uppercase tracking-widest text-white sm:w-auto"
               >
                 {t("button")}
               </Link>
-            </Magnetic>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/30 px-8 py-3.5 text-sm uppercase tracking-widest text-white/80 transition-colors hover:border-copper-bright hover:text-copper-bright"
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/40 px-8 text-sm uppercase tracking-widest text-white sm:w-auto"
             >
               {t("whatsapp")}
             </a>

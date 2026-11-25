@@ -65,7 +65,9 @@
       "showroom": "Showroom",
       "evening": "Evening"
     },
-    "viewStone": "View this stone"
+    "viewStone": "View this stone",
+    "viewSlab": "View the slab",
+    "viewPhoto": "View the photo"
   },
   "Story": {
     "eyebrow": "The journey",
@@ -146,6 +148,13 @@
     "title": "Explore our stone",
     "subtitle": "Six ranges, quarried and finished across four Indian units and shipped to 38+ countries.",
     "metaDescription": "Granite, marble, exotics, sandstone and tiles from Granitopia — natural stone finished in India and shipped to 38+ countries.",
+    "searchLabel": "Search stones",
+    "searchPlaceholder": "Search by name",
+    "filterCategory": "Material",
+    "filterFinish": "Finish",
+    "all": "All",
+    "noResults": "No stones match those filters.",
+    "clear": "Clear",
     "viewCollection": "View collection",
     "pieces": "{count, plural, one {# stone} other {# stones}}",
     "categoryBlurbs": {

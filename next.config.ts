@@ -3,6 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       // Allowed source for temporary stock imagery (swapped for real assets before go-live).
       { protocol: "https", hostname: "images.unsplash.com" },

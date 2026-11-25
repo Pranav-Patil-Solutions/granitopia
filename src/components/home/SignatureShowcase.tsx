@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { featuredStones } from "@/data/stones";
-import { MarbleTexture } from "@/components/visual/MarbleTexture";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -29,7 +29,7 @@ export function SignatureShowcase() {
   return (
     <section
       id="featured"
-      className="border-t border-line bg-paper px-6 py-24 md:py-32"
+      className="border-t border-line bg-paper px-5 py-16 sm:px-8 md:py-28"
     >
       <div className="mx-auto max-w-7xl">
         {/* Header */}
@@ -39,7 +39,7 @@ export function SignatureShowcase() {
               <p className="text-xs uppercase tracking-[0.3em] text-copper">
                 {t("eyebrow")}
               </p>
-              <h2 className="mt-3 max-w-xl font-display text-4xl leading-tight text-ink md:text-6xl">
+              <h2 className="mt-3 max-w-xl font-display text-4xl leading-[1.05] tracking-tight text-ink sm:text-6xl">
                 {t("title")}
               </h2>
               <p className="mt-4 max-w-md text-ink-soft">{t("subtitle")}</p>
@@ -54,7 +54,7 @@ export function SignatureShowcase() {
         </Reveal>
 
         {/* Bento grid */}
-        <div className="mt-12 grid auto-rows-[200px] grid-cols-2 gap-3 md:mt-16 md:auto-rows-[210px] md:grid-cols-4 md:gap-4">
+        <div className="mt-10 grid auto-rows-[180px] grid-cols-2 gap-2 sm:auto-rows-[220px] sm:gap-3 md:mt-16 md:auto-rows-[210px] md:grid-cols-4 md:gap-4">
           {stones.map((s, i) => {
             const origin = s.origin === "Imported" ? t("imported") : s.origin;
             return (
@@ -69,7 +69,14 @@ export function SignatureShowcase() {
                 >
                   {/* Macro veining (zooms on hover, motion-safe only) */}
                   <div className="absolute inset-0 motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-105">
-                    <MarbleTexture hero={s.heroColor} vein={s.veinColor} />
+                    <Image
+                      src={s.image}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                      className="object-cover"
+                      style={{ backgroundColor: s.heroColor }}
+                    />
                   </div>
                   {/* Legibility scrim */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />

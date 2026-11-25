@@ -55,7 +55,7 @@ export function Stats() {
   ];
 
   return (
-    <section className="border-t border-line bg-paper-2 px-6 py-24">
+    <section className="border-t border-line bg-paper-2 px-5 py-16 sm:px-8 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="text-center text-xs uppercase tracking-[0.3em] text-copper">
@@ -66,7 +66,7 @@ export function Stats() {
           {items.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.08}>
               <div className="text-center">
-                <div className="font-display text-4xl tabular-nums text-copper md:text-6xl">
+                <div className="font-display text-3xl tabular-nums text-copper sm:text-5xl lg:text-6xl">
                   <Counter value={item.value} />
                 </div>
                 <div className="mt-3 text-xs uppercase tracking-widest text-ink-soft">

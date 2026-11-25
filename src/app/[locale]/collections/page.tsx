@@ -1,8 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { brandedTitle, pageMetadata } from "@/lib/seo";
-import { categoryOrder } from "@/data/stones";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { CategoryCard } from "@/components/collections/CategoryCard";
+import { StoneCatalog } from "@/components/collections/StoneCatalog";
 
 export async function generateMetadata({
   params,
@@ -35,13 +34,9 @@ export default async function CollectionsPage({
         title={t("title")}
         subtitle={t("subtitle")}
       />
-      <section className="bg-paper px-6 py-24 md:py-32">
+      <section className="bg-paper px-5 py-12 sm:px-8 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
-            {categoryOrder.map((c, i) => (
-              <CategoryCard key={c} category={c} index={i} />
-            ))}
-          </div>
+          <StoneCatalog />
         </div>
       </section>
     </main>
