@@ -138,12 +138,14 @@
     "privacy": "Privacy Policy",
     "impressum": "Impressum",
     "cookies": "Cookie Notice",
-    "rights": "Granitopia Stones International LLP. All rights reserved."
+    "rights": "Granitopia Stones International LLP. All rights reserved.",
+    "newTab": "opens in a new tab"
   },
   "Collections": {
     "eyebrow": "The collections",
     "title": "Explore our stone",
     "subtitle": "Six ranges, quarried and finished across four Indian units and shipped to 38+ countries.",
+    "metaDescription": "Granite, marble, exotics, sandstone and tiles from Granitopia — natural stone finished in India and shipped to 38+ countries.",
     "viewCollection": "View collection",
     "pieces": "{count, plural, one {# stone} other {# stones}}",
     "categoryBlurbs": {
@@ -236,6 +238,7 @@
   "Careers": {
     "eyebrow": "Careers at Granitopia",
     "title": "Build a career carved in stone",
+    "metaDescription": "Open roles at Granitopia in Karnataka, Bengaluru, Rajasthan and Chennai — quarry operations, export sales, slab finishing and logistics.",
     "whyTitle": "Why work with us",
     "whyBody": "From the quarry face to the container yard, our people move exquisite natural stone to the world's finest projects. Join a hands-on, quarry-to-container team where craft, precision and pride in the material come first — and where good work travels to 38+ countries.",
     "openRolesTitle": "Open roles",
@@ -292,6 +295,12 @@
       "error": "Something went wrong. Please try again or WhatsApp us.",
       "required": "This field is required",
       "invalidEmail": "Please enter a valid email",
+      "tooLong": "Please shorten this",
+      "tooShort": "Please add a little more detail",
+      "invalidPhone": "Please enter a valid phone number",
+      "role": "Role",
+      "rolePrefill": "I would like to apply for the {role} role.",
+      "errorSummary": "Please correct {count, plural, one {# field} other {# fields}} before sending.",
       "mailtoFallback": "Your email app should open — please hit send to reach us. You can also WhatsApp us directly."
     },
     "reassure": {

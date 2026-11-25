@@ -55,3 +55,16 @@ permanent system delta, logged here in the same session.
    `kimberly-pink` still ship unattributed (guardrails OPEN item; `mahogany`
    resolved by removal). Both need real photography/attribution before the
    push ticket.
+
+## 2026-11-25 · SEO, footer, quote form
+
+1. **Misstep:** `pageMetadata` set `openGraph.images: undefined` when a page
+   had no photo of its own. Next.js treats that explicit key as “no images”
+   and drops the file-based `opengraph-image` / `twitter-image`. Nested routes
+   that set any `openGraph` object also do not inherit the `[locale]` image
+   file (the homepage, same segment, does).
+   **Delta:** omit the `images` key on the homepage so the file convention
+   applies, and set an explicit image URL on every nested route (stone photo,
+   or `/{locale}/opengraph-image` and `twitter-image`). Confirm with curl that
+   a child page such as `/en/careers` actually contains `og:image`, not only
+   the homepage.

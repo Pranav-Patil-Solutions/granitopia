@@ -3,7 +3,9 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { getStone } from "@/data/stones";
+import { isCareerRoleKey } from "@/data/roles";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
+import { brandedTitle, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +14,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Contact" });
-  return { title: `${t("title")} — Granitopia` };
+  return pageMetadata({
+    locale,
+    href: "/contact",
+    title: brandedTitle(t("title")),
+    description: t("subtitle"),
+  });
 }
 
 export default async function ContactPage({
@@ -32,6 +39,12 @@ export default async function ContactPage({
 
   const stoneSlug = typeof sp.stone === "string" ? sp.stone : undefined;
   const stone = stoneSlug ? getStone(stoneSlug) : undefined;
+  const roleParam = typeof sp.role === "string" ? sp.role : undefined;
+  const careers = await getTranslations("Careers");
+  const roleTitle =
+    roleParam && isCareerRoleKey(roleParam)
+      ? careers(`roles.${roleParam}.title`)
+      : undefined;
 
   const reassurances = [
     t("reassure.fast"),
@@ -50,7 +63,11 @@ export default async function ContactPage({
         <div className="grid items-start gap-10 md:grid-cols-[1.5fr_1fr] md:gap-12">
           {/* Enquiry */}
           <div>
-            <QuoteForm defaultStone={stone?.name} />
+            <QuoteForm
+              key={`${stone?.slug ?? ""}-${roleParam ?? ""}`}
+              defaultStone={stone?.name}
+              defaultRole={roleTitle}
+            />
 
             {/* Low-friction reassurance */}
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-6">

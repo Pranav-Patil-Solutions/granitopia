@@ -138,12 +138,14 @@
     "privacy": "Datenschutz",
     "impressum": "Impressum",
     "cookies": "Cookie-Hinweis",
-    "rights": "Granitopia Stones International LLP. Alle Rechte vorbehalten."
+    "rights": "Granitopia Stones International LLP. Alle Rechte vorbehalten.",
+    "newTab": "öffnet in einem neuen Tab"
   },
   "Collections": {
     "eyebrow": "Die Kollektionen",
     "title": "Entdecken Sie unseren Stein",
     "subtitle": "Sechs Serien, gefertigt in vier indischen Werken und in über 38 Länder geliefert.",
+    "metaDescription": "Granit, Marmor, Exoten, Sandstein sowie Fliesen und Pflaster von Granitopia — Naturstein aus Indien, geliefert in über 38 Länder.",
     "viewCollection": "Kollektion ansehen",
     "pieces": "{count, plural, one {# Stein} other {# Steine}}",
     "categoryBlurbs": {
@@ -236,6 +238,7 @@
   "Careers": {
     "eyebrow": "Karriere bei Granitopia",
     "title": "Eine Karriere, in Stein gemeißelt",
+    "metaDescription": "Offene Stellen bei Granitopia in Karnataka, Bengaluru, Rajasthan und Chennai — Steinbruch, Exportvertrieb, Plattenveredelung und Logistik.",
     "whyTitle": "Warum bei uns arbeiten",
     "whyBody": "Von der Steinbruchwand bis zum Containerhof bringen unsere Mitarbeitenden exquisiten Naturstein zu den schönsten Projekten der Welt. Werden Sie Teil eines praxisnahen Teams vom Steinbruch bis zum Container, in dem Handwerk, Präzision und Freude am Material an erster Stelle stehen – und gute Arbeit in über 38 Länder reist.",
     "openRolesTitle": "Offene Stellen",
@@ -292,6 +295,12 @@
       "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder per WhatsApp.",
       "required": "Dieses Feld ist erforderlich",
       "invalidEmail": "Bitte geben Sie eine gültige E-Mail ein",
+      "tooLong": "Bitte kürzen Sie diesen Text",
+      "tooShort": "Bitte beschreiben Sie es etwas genauer",
+      "invalidPhone": "Bitte geben Sie eine gültige Telefonnummer ein",
+      "role": "Stelle",
+      "rolePrefill": "Ich möchte mich auf die Stelle {role} bewerben.",
+      "errorSummary": "Bitte korrigieren Sie {count, plural, one {# Feld} other {# Felder}}, bevor Sie senden.",
       "mailtoFallback": "Ihr E-Mail-Programm sollte sich öffnen – bitte senden Sie die Nachricht ab. Sie können uns auch direkt per WhatsApp erreichen."
     },
     "reassure": {

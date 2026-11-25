@@ -1,18 +1,28 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 
+/**
+ * Explore links, one rule for every page and locale:
+ * on the homepage, scroll to the section that already exists there;
+ * everywhere else, go to the real route (those hashes are not on other pages).
+ */
 export function Footer() {
   const t = useTranslations("Footer");
   const nav = useTranslations("Nav");
+  const pathname = usePathname();
+  const onHome = pathname === "/";
 
   const explore = [
-    { label: nav("collections"), href: "#featured" },
-    { label: nav("about"), href: "#story" },
-    { label: nav("quote"), href: "#quote" },
+    {
+      label: nav("collections"),
+      href: onHome ? "/#featured" : "/collections",
+    },
+    { label: nav("about"), href: onHome ? "/#story" : "/about" },
+    { label: nav("quote"), href: onHome ? "/#quote" : "/contact" },
   ];
   const legal = [
     { label: t("privacy"), href: "/privacy" },
@@ -67,9 +77,9 @@ export function Footer() {
             <ul className="space-y-2">
               {explore.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="transition-colors hover:text-copper">
+                  <Link href={l.href} className="transition-colors hover:text-copper">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
@@ -117,7 +127,15 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {t("rights")}
           </p>
-          <p className="tracking-widest">MADE BY HANDELOS</p>
+          <a
+            href="https://handelos.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tracking-widest transition-colors hover:text-copper"
+          >
+            MADE BY HANDELOS
+            <span className="sr-only"> ({t("newTab")})</span>
+          </a>
         </div>
       </div>
     </footer>

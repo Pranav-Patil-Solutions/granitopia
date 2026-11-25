@@ -10,6 +10,7 @@ import {
   type StoneCategory,
 } from "@/data/stones";
 import { StoneCard } from "@/components/collections/StoneCard";
+import { brandedTitle, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -23,9 +24,18 @@ export async function generateMetadata({
   params: Promise<{ locale: string; category: string }>;
 }) {
   const { locale, category } = await params;
-  const t = await getTranslations({ locale, namespace: "Featured" });
   if (!categoryOrder.includes(category as StoneCategory)) return {};
-  return { title: `${t(`categories.${category}`)} — Granitopia` };
+  const t = await getTranslations({ locale, namespace: "Featured" });
+  const collections = await getTranslations({
+    locale,
+    namespace: "Collections",
+  });
+  return pageMetadata({
+    locale,
+    href: `/collections/${category}`,
+    title: brandedTitle(t(`categories.${category}`)),
+    description: collections(`categoryBlurbs.${category}`),
+  });
 }
 
 export default async function CategoryPage({

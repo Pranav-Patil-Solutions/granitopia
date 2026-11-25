@@ -5,7 +5,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { categoryOrder, stones, type StoneCategory } from "./stones";
+import { categoryOrder, getStone, stones, type StoneCategory } from "./stones";
 
 const PUBLIC_DIR = join(__dirname, "..", "..", "public");
 
@@ -41,6 +41,15 @@ describe("stones catalog", () => {
 
   // GRN-122 regression: the "monuments" category and its sole stone
   // (Mahogany) were retired; guard against silent re-introduction.
+  it("spells Millennium Cream and still resolves the old slug", () => {
+    const stone = getStone("millennium-cream");
+    expect(stone?.name).toBe("Millennium Cream");
+    expect(stone?.image).toBe("/images/stones/millennium-cream.jpg");
+    expect(getStone("millenium-cream")?.slug).toBe("millennium-cream");
+    expect(stones.some((s) => /millenium/i.test(s.name))).toBe(false);
+    expect(stones.some((s) => s.slug === "millenium-cream")).toBe(false);
+  });
+
   it("no longer contains the retired monuments category or mahogany stone", () => {
     expect(categoryOrder).not.toContain("monuments");
     expect(stones.some((s) => s.slug === "mahogany")).toBe(false);

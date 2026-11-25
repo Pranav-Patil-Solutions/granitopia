@@ -4,13 +4,8 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealImage } from "@/components/ui/RevealImage";
-
-const ROLE_KEYS = [
-  "quarryLead",
-  "exportSales",
-  "cncFinisher",
-  "logistics",
-] as const;
+import { CAREER_ROLE_KEYS } from "@/data/roles";
+import { brandedTitle, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -19,7 +14,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Careers" });
-  return { title: `${t("eyebrow")} — Granitopia` };
+  return pageMetadata({
+    locale,
+    href: "/careers",
+    title: brandedTitle(t("title")),
+    description: t("metaDescription"),
+  });
 }
 
 export default async function CareersPage({
@@ -67,10 +67,10 @@ export default async function CareersPage({
             {t("openRolesTitle")}
           </h2>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
-            {ROLE_KEYS.map((key) => (
+            {CAREER_ROLE_KEYS.map((key) => (
               <li key={key}>
                 <Link
-                  href="/contact"
+                  href={{ pathname: "/contact", query: { role: key } }}
                   className="group flex h-full flex-col rounded-sm border border-line bg-paper p-7 transition-colors hover:border-copper"
                 >
                   <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-copper">

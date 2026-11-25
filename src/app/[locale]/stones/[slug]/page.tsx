@@ -1,12 +1,15 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import { Link, permanentRedirect } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getStone, stones, stonesInCategory } from "@/data/stones";
 import { StoneViewer } from "@/components/stone/StoneViewer";
 import { StoneCard } from "@/components/collections/StoneCard";
 import { MarbleTexture } from "@/components/visual/MarbleTexture";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { WHATSAPP_URL } from "@/lib/contact";
+import { pageMetadata, productJsonLd } from "@/lib/seo";
+import { stoneMeta } from "@/lib/stone-meta";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -19,9 +22,18 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const stone = getStone(slug);
-  return { title: stone ? `${stone.name} — Granitopia` : "Granitopia" };
+  if (!stone) return { title: "Granitopia" };
+  const copy = await stoneMeta(locale, stone);
+  return pageMetadata({
+    locale,
+    href: `/stones/${stone.slug}`,
+    title: copy.title,
+    description: copy.description,
+    image: stone.image,
+    imageAlt: stone.name,
+  });
 }
 
 export default async function StonePage({
@@ -30,11 +42,15 @@ export default async function StonePage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const stone = getStone(slug);
   if (!stone) notFound();
-  setRequestLocale(locale);
+  if (stone.slug !== slug) {
+    permanentRedirect({ href: `/stones/${stone.slug}`, locale });
+  }
 
   const t = await getTranslations("StoneDetail");
+  const copy = await stoneMeta(locale, stone);
   const cat = await getTranslations("Featured");
   const slab = await getTranslations("Slab");
   const nav = await getTranslations("Nav");
@@ -54,6 +70,21 @@ export default async function StonePage({
 
   return (
     <main className="pt-28">
+      <JsonLd
+        data={productJsonLd({
+          name: stone.name,
+          description: copy.description,
+          image: stone.image,
+          url: copy.url,
+          category: copy.category,
+          originLabel: copy.originLabel,
+          origin: copy.origin,
+          thicknessLabel: copy.thicknessLabel,
+          thickness: stone.thickness,
+          finishesLabel: copy.finishesLabel,
+          finishes: copy.finishes,
+        })}
+      />
       {/* Breadcrumb — keeps the top light so the (transparent) nav stays legible */}
       <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-6 pt-8">
         <ol className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-ink-soft">
