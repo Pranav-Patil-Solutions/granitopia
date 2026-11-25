@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { LegalContent } from "@/components/layout/LegalContent";
+import { brandedTitle, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -8,7 +9,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Legal" });
-  return { title: `${t("cookies.title")} — Granitopia` };
+  return pageMetadata({
+    locale,
+    href: "/cookies",
+    title: brandedTitle(t("cookies.title")),
+    description: t("cookies.intro"),
+  });
 }
 
 export default async function CookiesPage({

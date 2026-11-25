@@ -1,4 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 import { VideoHero } from "@/components/hero/VideoHero";
 import { Stats } from "@/components/home/Stats";
 import { Prestige } from "@/components/home/Prestige";
@@ -7,6 +8,21 @@ import { StoneGallery } from "@/components/home/StoneGallery";
 import { StoryScroller } from "@/components/scroll/StoryScroller";
 import { SignatureShowcase } from "@/components/home/SignatureShowcase";
 import { QuoteCta } from "@/components/home/QuoteCta";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return pageMetadata({
+    locale,
+    href: "/",
+    title: t("title"),
+    description: t("description"),
+  });
+}
 
 export default async function HomePage({
   params,

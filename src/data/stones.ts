@@ -595,17 +595,17 @@ export const stones: Stone[] = [
     blurb: "Meera White — a natural granite from Granitopia, quarried in India.",
   },
   {
-    slug: "millenium-cream",
-    name: "Millenium Cream",
+    slug: "millennium-cream",
+    name: "Millennium Cream",
     category: "granite",
-    image: "/images/stones/millenium-cream.jpg",
+    image: "/images/stones/millennium-cream.jpg",
     heroColor: "#b89e6f",
     veinColor: "#bfa777",
     finishes: ["polished", "leathered", "honed", "flamed"],
     origin: "India",
     thickness: "18mm / 20mm / 30mm",
     applications: ["Countertops", "Flooring", "Cladding"],
-    blurb: "Millenium Cream — a natural granite from Granitopia, quarried in India.",
+    blurb: "Millennium Cream — a natural granite from Granitopia, quarried in India.",
   },
   {
     slug: "moon-white",
@@ -1068,8 +1068,14 @@ export const categoryOrder: StoneCategory[] = [
   "tiles",
 ];
 
+/** Old public slug kept resolvable so bookmarks still find the stone. */
+const SLUG_ALIASES: Record<string, string> = {
+  "millenium-cream": "millennium-cream",
+};
+
 export function getStone(slug: string): Stone | undefined {
-  return stones.find((s) => s.slug === slug);
+  const canonical = SLUG_ALIASES[slug] ?? slug;
+  return stones.find((s) => s.slug === canonical);
 }
 
 export function stonesInCategory(category: StoneCategory): Stone[] {

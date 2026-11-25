@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
@@ -16,6 +17,8 @@ import { AnalyticsGate } from "@/components/analytics/AnalyticsGate";
 import { Preloader } from "@/components/fx/Preloader";
 import { CustomCursor } from "@/components/fx/CustomCursor";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_NAME, SITE_URL, absoluteUrl, ogLocale, organizationJsonLd } from "@/lib/seo";
 import "../globals.css";
 
 const fraunces = Fraunces({
@@ -43,10 +46,29 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
-}) {
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: title, template: `%s — ${SITE_NAME}` },
+    description,
+    openGraph: {
+      type: "website",
+      siteName: SITE_NAME,
+      title,
+      description,
+      locale: ogLocale(locale),
+      url: absoluteUrl(locale, "/"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export default async function LocaleLayout({
@@ -60,6 +82,7 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const messages = await getMessages();
+  const meta = await getTranslations("Meta");
 
   return (
     <html
@@ -68,6 +91,7 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${inter.variable} ${plexArabic.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-ink">
+        <JsonLd data={organizationJsonLd(meta("description"))} />
         <NextIntlClientProvider messages={messages}>
           <Preloader />
           <CustomCursor />

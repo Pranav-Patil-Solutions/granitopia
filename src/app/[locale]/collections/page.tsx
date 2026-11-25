@@ -1,4 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { brandedTitle, pageMetadata } from "@/lib/seo";
 import { categoryOrder } from "@/data/stones";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CategoryCard } from "@/components/collections/CategoryCard";
@@ -10,7 +11,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Collections" });
-  return { title: `${t("title")} — Granitopia` };
+  return pageMetadata({
+    locale,
+    href: "/collections",
+    title: brandedTitle(t("title")),
+    description: t("metaDescription"),
+  });
 }
 
 export default async function CollectionsPage({

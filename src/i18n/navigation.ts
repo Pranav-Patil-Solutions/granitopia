@@ -3,5 +3,11 @@ import { routing } from "./routing";
 
 // Locale-aware navigation helpers. Use these instead of next/link + next/navigation
 // so the active locale prefix is preserved automatically.
-export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createNavigation(routing);
+export const {
+  Link,
+  redirect,
+  permanentRedirect,
+  usePathname,
+  useRouter,
+  getPathname,
+} = createNavigation(routing);

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { brandedTitle, pageMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Stats } from "@/components/home/Stats";
 import { QuoteCta } from "@/components/home/QuoteCta";
@@ -13,7 +14,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "About" });
-  return { title: `${t("eyebrow")} — Granitopia` };
+  return pageMetadata({
+    locale,
+    href: "/about",
+    title: brandedTitle(t("title")),
+    description: t("lead"),
+  });
 }
 
 /**
