@@ -132,6 +132,12 @@ summary:focus-visible {
 [dir="rtl"] .hero-progress {
   transform-origin: right;
 }
+.hero-ink {
+  color: #fff;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 16px rgba(0, 0, 0, 0.65);
+}
 .hero-line {
   animation: hero-line-in 0.9s cubic-bezier(0.76, 0, 0.24, 1) both;
   animation-delay: 0.85s;
