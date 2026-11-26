@@ -155,6 +155,11 @@
     "all": "All",
     "noResults": "No stones match those filters.",
     "clear": "Clear",
+    "quickView": "Quick view",
+    "loadMore": "Load more",
+    "close": "Close",
+    "viewStone": "View this stone",
+    "quote": "Get a quote",
     "viewCollection": "View collection",
     "pieces": "{count, plural, one {# stone} other {# stones}}",
     "categoryBlurbs": {
@@ -318,6 +323,13 @@
       "samples": "Samples on request"
     },
     "showroomAlt": "A warm showroom with a backlit onyx feature wall and marble floor"
+  },
+  "Ui": {
+    "backToTop": "Back to top",
+    "notFoundTitle": "This page is not in the collection",
+    "notFoundBody": "The address may have changed. Browse the stones, or ask the export desk for a quote.",
+    "browse": "Browse the stones",
+    "quote": "Get a quote"
   },
   "Consent": {
     "message": "We use cookies to measure traffic and improve your experience.",

@@ -16,6 +16,7 @@ import { CookieBanner } from "@/components/consent/CookieBanner";
 import { AnalyticsGate } from "@/components/analytics/AnalyticsGate";
 import { Preloader } from "@/components/fx/Preloader";
 import { CustomCursor } from "@/components/fx/CustomCursor";
+import { Chrome } from "@/components/layout/Chrome";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_NAME, SITE_URL, absoluteUrl, ogLocale, organizationJsonLd } from "@/lib/seo";
@@ -105,6 +106,7 @@ export default async function LocaleLayout({
           <Nav />
           {children}
           <Footer />
+          <Chrome />
           <CookieBanner />
           <AnalyticsGate />
         </NextIntlClientProvider>

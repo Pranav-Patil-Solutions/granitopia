@@ -120,28 +120,24 @@ export default async function AboutPage({
       </section>
 
       {/* Mission / Vision */}
-      <section className="border-t border-line bg-paper px-6 py-24 md:py-32">
-        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:gap-16">
-          <Reveal>
-            <div className="border-t-2 border-copper pt-6">
-              <h2 className="text-xs uppercase tracking-[0.3em] text-copper">
-                {t("missionTitle")}
-              </h2>
-              <p className="mt-4 font-display text-xl leading-relaxed text-ink md:text-2xl">
-                {t("missionBody")}
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <div className="border-t-2 border-copper pt-6">
-              <h2 className="text-xs uppercase tracking-[0.3em] text-copper">
-                {t("visionTitle")}
-              </h2>
-              <p className="mt-4 font-display text-xl leading-relaxed text-ink md:text-2xl">
-                {t("visionBody")}
-              </p>
-            </div>
-          </Reveal>
+      <section className="border-t border-line bg-paper px-5 py-16 sm:px-8 md:py-28">
+        <div className="mx-auto grid max-w-5xl gap-4">
+          <details open className="border-t border-line py-5">
+            <summary className="cursor-pointer list-none text-xs uppercase tracking-[0.28em] text-copper">
+              {t("missionTitle")}
+            </summary>
+            <p className="mt-4 max-w-xl font-display text-2xl leading-snug text-ink">
+              {t("missionBody")}
+            </p>
+          </details>
+          <details open className="border-t border-line py-5">
+            <summary className="cursor-pointer list-none text-xs uppercase tracking-[0.28em] text-copper">
+              {t("visionTitle")}
+            </summary>
+            <p className="mt-4 max-w-xl font-display text-2xl leading-snug text-ink">
+              {t("visionBody")}
+            </p>
+          </details>
         </div>
       </section>
 

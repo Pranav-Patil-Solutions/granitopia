@@ -18,6 +18,7 @@ export function StoneViewer({ stone }: { stone: Stone }) {
   const [inView, setInView] = useState(false);
   const [phone, setPhone] = useState(true);
   const [show3d, setShow3d] = useState(false);
+  const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,15 +58,17 @@ export function StoneViewer({ stone }: { stone: Stone }) {
         {show ? (
           <SlabViewer stone={stone} finish={finish} />
         ) : (
-          <Image
-            src={stone.image}
-            alt={stone.name}
-            fill
-            priority
-            quality={75}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
+          <button type="button" className="absolute inset-0" onClick={() => setOpen(true)} aria-label={stone.name}>
+            <Image
+              src={stone.image}
+              alt={stone.name}
+              fill
+              priority
+              quality={75}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </button>
         )}
         {!phone && show3d && (
           <span className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-ink-soft">
@@ -73,6 +76,20 @@ export function StoneViewer({ stone }: { stone: Stone }) {
           </span>
         )}
       </div>
+      {open && (
+        <dialog
+          open
+          className="fixed inset-0 z-[80] m-0 h-full max-h-none w-full max-w-none bg-ink/92 p-6"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setOpen(false);
+          }}
+        >
+          <button type="button" className="absolute right-4 top-4 min-h-11 px-3 text-2xl text-paper" onClick={() => setOpen(false)} aria-label={t("viewPhoto")}>
+            ×
+          </button>
+          <img src={stone.image} alt={stone.name} className="mx-auto h-full max-h-[90svh] object-contain" />
+        </dialog>
+      )}
       <div className="mt-5 flex flex-wrap gap-2">
         {!phone && webgl && (
           <button

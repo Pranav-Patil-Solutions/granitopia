@@ -15,7 +15,7 @@ export function CookieBanner() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-line bg-paper/95 px-6 py-4 backdrop-blur">
+    <div className="fixed bottom-24 right-4 z-[70] max-w-sm border border-ink bg-paper p-5 shadow-none md:bottom-6 md:right-6">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <p className="text-sm text-ink-soft">{t("message")}</p>
         <div className="flex shrink-0 gap-3">
@@ -25,7 +25,7 @@ export function CookieBanner() {
               setConsent("declined");
               setShow(false);
             }}
-            className="rounded-full border border-line px-5 py-2 text-xs uppercase tracking-widest text-ink-soft transition-colors hover:text-ink"
+            className="min-h-11 border border-ink px-4 text-xs uppercase tracking-widest"
           >
             {t("decline")}
           </button>
@@ -35,7 +35,7 @@ export function CookieBanner() {
               setConsent("accepted");
               setShow(false);
             }}
-            className="rounded-full bg-copper px-5 py-2 text-xs uppercase tracking-widest text-white"
+            className="min-h-11 bg-ink px-4 text-xs uppercase tracking-widest text-paper"
           >
             {t("accept")}
           </button>
