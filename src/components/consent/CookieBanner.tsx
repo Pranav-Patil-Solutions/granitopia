@@ -9,13 +9,14 @@ export function CookieBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setShow(getConsent() === null);
+    const frame = requestAnimationFrame(() => setShow(getConsent() === null));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-24 right-4 z-[70] max-w-sm border border-ink bg-paper p-5 shadow-none md:bottom-6 md:right-6">
+    <div className="fixed left-4 right-4 top-20 z-[70] border border-ink bg-paper p-5 sm:left-auto sm:right-6 sm:w-80">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <p className="text-sm text-ink-soft">{t("message")}</p>
         <div className="flex shrink-0 gap-3">

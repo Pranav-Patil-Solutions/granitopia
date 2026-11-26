@@ -12,7 +12,11 @@ export function Preloader() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (prefersReducedMotion() || sessionStorage.getItem(KEY)) return;
+    if (prefersReducedMotion() || sessionStorage.getItem(KEY)) {
+      window.dispatchEvent(new Event("granitopia:intro-done"));
+      document.documentElement.classList.add("intro-done");
+      return;
+    }
     // Whether to show the curtain is a client-only decision (sessionStorage +
     // reduced-motion) that also gates the framer-motion exit animation, so it
     // can't be a lazy initial state without an SSR/hydration mismatch. The one
@@ -24,6 +28,8 @@ export function Preloader() {
       sessionStorage.setItem(KEY, "1");
       setShow(false);
       document.body.style.overflow = "";
+      window.dispatchEvent(new Event("granitopia:intro-done"));
+      document.documentElement.classList.add("intro-done");
     }, 900);
     return () => {
       clearTimeout(t);

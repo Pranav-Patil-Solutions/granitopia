@@ -19,7 +19,11 @@
     "titleAccent": "perfected.",
     "subtitle": "From Indian quarries to 38+ countries — exquisite granite, marble and exotics, cut and finished for the world's finest spaces.",
     "watchFilm": "Watch the film",
-    "scrollCue": "Scroll to explore"
+    "scrollCue": "Scroll to explore",
+    "prev": "Previous stone",
+    "next": "Next stone",
+    "pause": "Pause",
+    "play": "Play"
   },
   "Stats": {
     "title": "A quarry-to-container powerhouse",

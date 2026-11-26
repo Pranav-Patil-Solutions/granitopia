@@ -97,6 +97,12 @@ export default async function LocaleLayout({
       } h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-ink">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(sessionStorage.getItem('granitopia-preloaded'))document.documentElement.classList.add('intro-done')}catch(e){}",
+          }}
+        />
         <JsonLd data={organizationJsonLd(meta("description"))} />
         <NextIntlClientProvider messages={messages}>
           <Preloader />

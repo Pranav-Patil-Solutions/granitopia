@@ -19,7 +19,11 @@
     "titleAccent": "perfektioniert.",
     "subtitle": "Aus indischen Steinbrüchen in über 38 Länder – exquisiter Granit, Marmor und Exoten, geschnitten und veredelt für die schönsten Räume der Welt.",
     "watchFilm": "Film ansehen",
-    "scrollCue": "Scrollen zum Entdecken"
+    "scrollCue": "Scrollen zum Entdecken",
+    "prev": "Vorheriger Stein",
+    "next": "Nächster Stein",
+    "pause": "Pause",
+    "play": "Abspielen"
   },
   "Stats": {
     "title": "Vom Steinbruch bis zum Container",

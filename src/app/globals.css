@@ -114,6 +114,56 @@ summary:focus-visible {
   background-size: 100% 1px;
 }
 
+@keyframes hero-ken {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.hero-ken {
+  animation: hero-ken 14s ease-out forwards;
+}
+@keyframes hero-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.hero-progress {
+  transform-origin: left;
+  animation: hero-progress 6.5s linear forwards;
+}
+[dir="rtl"] .hero-progress {
+  transform-origin: right;
+}
+.hero-line {
+  animation: hero-line-in 0.9s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation-delay: 0.85s;
+}
+html.intro-done .hero-d1 { animation-delay: 0.05s; }
+html.intro-done .hero-d2 { animation-delay: 0.18s; }
+html.intro-done .hero-d3 { animation-delay: 0.32s; }
+html.intro-done .hero-d4 { animation-delay: 0.46s; }
+@keyframes hero-line-in {
+  from { clip-path: inset(0 0 100% 0); transform: translateY(0.35em); }
+  to { clip-path: inset(0 0 0 0); transform: none; }
+}
+@keyframes hero-cue {
+  0%, 100% { transform: scaleY(0.4); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+}
+.hero-cue {
+  animation: hero-cue 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-draw,
+  .hero-ken,
+  .hero-progress,
+  .hero-line,
+  .hero-cue {
+    animation: none;
+    transition: none;
+    clip-path: none;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .link-draw,
   .motion-safe\:transition-transform {
