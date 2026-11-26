@@ -33,7 +33,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-dark px-5 pb-10 pt-16 text-white/70 sm:px-8"
+      className="bg-dark px-5 pb-28 pt-16 text-white/70 sm:px-8 md:pb-10"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">

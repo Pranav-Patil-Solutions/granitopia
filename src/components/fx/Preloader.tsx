@@ -12,13 +12,7 @@ export function Preloader() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (
-      prefersReducedMotion() ||
-      sessionStorage.getItem(KEY) ||
-      window.matchMedia("(max-width: 767px)").matches
-    ) {
-      return;
-    }
+    if (prefersReducedMotion() || sessionStorage.getItem(KEY)) return;
     // Whether to show the curtain is a client-only decision (sessionStorage +
     // reduced-motion) that also gates the framer-motion exit animation, so it
     // can't be a lazy initial state without an SSR/hydration mismatch. The one
@@ -30,7 +24,7 @@ export function Preloader() {
       sessionStorage.setItem(KEY, "1");
       setShow(false);
       document.body.style.overflow = "";
-    }, 1900);
+    }, 900);
     return () => {
       clearTimeout(t);
       document.body.style.overflow = "";
@@ -67,14 +61,7 @@ export function Preloader() {
               style={{ transformOrigin: "left" }}
             />
           </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-4 text-[10px] uppercase tracking-[0.4em] text-white/40"
-          >
-            Utopia of Natural Stones
-          </motion.p>
+          <p className="mt-8 font-display text-4xl italic text-white">100</p>
         </motion.div>
       )}
     </AnimatePresence>

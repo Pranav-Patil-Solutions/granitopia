@@ -6,21 +6,21 @@
    ============================================================ */
 
 @theme {
-  /* Surfaces — warm gallery paper, not stark white */
-  --color-paper: #f7f4ef;
-  --color-paper-2: #efe8dc;
-  --color-dark: #1a1412;
+  /* Surfaces — warm gallery grey, measured beside BAS #E5E5E2 */
+  --color-paper: #e6e3de;
+  --color-paper-2: #d8d3cb;
+  --color-dark: #12110e;
 
-  /* Ink */
-  --color-ink: #1c1714;
-  --color-ink-soft: #5e564e;
-  --color-line: #e4d9cc;
+  /* Ink — BAS ink #161601 */
+  --color-ink: #161601;
+  --color-ink-soft: #5c5a4e;
+  --color-line: #c9c4ba;
 
-  /* Brand accents */
-  --color-copper: #b6702a;
-  --color-copper-deep: #965a20; /* filled buttons: white text passes AA (5.5:1) */
-  --color-copper-bright: #d98b45; /* accents ON dark bands: passes AA on charcoal (6:1) */
-  --color-gold: #d19a20;
+  /* Bronze — Granitopia's own action color. Later duplicates removed. */
+  --color-copper: #8c5a32;
+  --color-copper-deep: #6e4524;
+  --color-copper-bright: #c4a574;
+  --color-gold: #a6843d;
 
   /* Type families (wired to next/font CSS variables in the locale layout) */
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
@@ -90,8 +90,35 @@ body {
 }
 
 ::selection {
-  background: var(--color-copper);
-  color: #fff;
+  background: #161601;
+  color: #e6e3de;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #161601;
+  outline-offset: 3px;
+}
+
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-draw:hover {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-draw,
+  .motion-safe\:transition-transform {
+    transition: none;
+  }
 }
 
 /* Soft warm vignette helper */

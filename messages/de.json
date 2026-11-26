@@ -155,6 +155,11 @@
     "all": "Alle",
     "noResults": "Keine Steine passen zu dieser Auswahl.",
     "clear": "Zurücksetzen",
+    "quickView": "Schnellansicht",
+    "loadMore": "Mehr laden",
+    "close": "Schließen",
+    "viewStone": "Diesen Stein ansehen",
+    "quote": "Angebot anfordern",
     "viewCollection": "Kollektion ansehen",
     "pieces": "{count, plural, one {# Stein} other {# Steine}}",
     "categoryBlurbs": {
@@ -318,6 +323,13 @@
       "samples": "Muster auf Anfrage"
     },
     "showroomAlt": "Ein warmer Ausstellungsraum mit hinterleuchteter Onyxwand und Marmorboden"
+  },
+  "Ui": {
+    "backToTop": "Nach oben",
+    "notFoundTitle": "Diese Seite ist nicht in der Kollektion",
+    "notFoundBody": "Die Adresse kann sich geändert haben. Sehen Sie die Steine an oder fordern Sie ein Angebot an.",
+    "browse": "Steine ansehen",
+    "quote": "Angebot anfordern"
   },
   "Consent": {
     "message": "Wir verwenden Cookies, um den Traffic zu messen und Ihr Erlebnis zu verbessern.",

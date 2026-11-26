@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { categoryOrder, stones, type StoneCategory } from "@/data/stones";
 import type { Finish } from "@/data/stones";
 import { StoneCard } from "@/components/collections/StoneCard";
@@ -18,6 +19,8 @@ export function StoneCatalog({ category }: { category?: StoneCategory }) {
   const [query, setQuery] = useState("");
   const [material, setMaterial] = useState<StoneCategory | "">("");
   const [finish, setFinish] = useState<Finish | "">("");
+  const [visible, setVisible] = useState(12);
+  const [quick, setQuick] = useState<(typeof stones)[number] | null>(null);
 
   const pool = useMemo(
     () => (category ? stones.filter((s) => s.category === category) : stones),
@@ -47,6 +50,7 @@ export function StoneCatalog({ category }: { category?: StoneCategory }) {
     setQuery("");
     setMaterial("");
     setFinish("");
+    setVisible(12);
   }
 
   return (
@@ -117,10 +121,64 @@ export function StoneCatalog({ category }: { category?: StoneCategory }) {
         <p className="mt-12 text-lg text-ink-soft">{t("noResults")}</p>
       ) : (
         <div className="mt-8 grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {shown.map((stone, i) => (
-            <StoneCard key={stone.slug} stone={stone} index={i} />
+          {shown.slice(0, visible).map((stone, i) => (
+            <div key={stone.slug} className="min-w-0">
+              <StoneCard stone={stone} index={i} />
+              <button
+                type="button"
+                onClick={() => setQuick(stone)}
+                className="mt-2 min-h-11 text-xs uppercase tracking-[0.18em] text-ink-soft link-draw"
+              >
+                {t("quickView")}
+              </button>
+            </div>
           ))}
         </div>
+      )}
+      {visible < shown.length && (
+        <button
+          type="button"
+          onClick={() => setVisible((n) => n + 12)}
+          className="mt-10 inline-flex min-h-12 items-center border border-ink px-6 text-xs uppercase tracking-[0.2em]"
+        >
+          {t("loadMore")}
+        </button>
+      )}
+      {quick && (
+        <dialog
+          open
+          className="fixed inset-0 z-[80] m-0 flex h-full w-full items-end bg-ink/50 p-0 sm:items-center sm:justify-center sm:p-8"
+          onClick={() => setQuick(null)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setQuick(null);
+          }}
+        >
+          <div
+            className="grid w-full max-w-3xl bg-paper sm:grid-cols-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative aspect-square bg-paper-2">
+              <img src={quick.image} alt={quick.name} className="h-full w-full object-cover" />
+            </div>
+            <div className="flex flex-col p-6">
+              <button type="button" className="self-end min-h-11 px-2" onClick={() => setQuick(null)}>
+                {t("close")}
+              </button>
+              <p className="font-display text-4xl text-ink">{quick.name}</p>
+              <div className="mt-auto flex flex-col gap-3 pt-8">
+                <Link href={`/stones/${quick.slug}`} className="inline-flex min-h-12 items-center justify-center bg-ink text-xs uppercase tracking-[0.2em] text-paper">
+                  {t("viewStone")}
+                </Link>
+                <Link
+                  href={{ pathname: "/contact", query: { stone: quick.slug } }}
+                  className="inline-flex min-h-12 items-center justify-center border border-ink text-xs uppercase tracking-[0.2em]"
+                >
+                  {t("quote")}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </dialog>
       )}
     </div>
   );
