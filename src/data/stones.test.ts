@@ -6,6 +6,8 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { categoryOrder, getStone, stones, type StoneCategory } from "./stones";
+import { heroFinishImages } from "./heroFinishes";
+import { EXPORT_DESTINATIONS, EXPORT_ORIGIN } from "./exportMarkets";
 
 const PUBLIC_DIR = join(__dirname, "..", "..", "public");
 
@@ -48,6 +50,20 @@ describe("stones catalog", () => {
     expect(getStone("millenium-cream")?.slug).toBe("millennium-cream");
     expect(stones.some((s) => /millenium/i.test(s.name))).toBe(false);
     expect(stones.some((s) => s.slug === "millenium-cream")).toBe(false);
+  });
+
+  it("only lists finish photos that exist, and none are shipped yet", () => {
+    const files = Object.values(heroFinishImages).flatMap((finishes) =>
+      Object.values(finishes).filter((src): src is string => Boolean(src)),
+    );
+    const missing = files.filter((src) => !existsSync(join(PUBLIC_DIR, src)));
+    expect(missing).toEqual([]);
+    expect(files).toEqual([]);
+  });
+
+  it("draws the export map from Bengaluru to markets the site names", () => {
+    expect(EXPORT_ORIGIN.id).toBe("bengaluru");
+    expect(EXPORT_DESTINATIONS.map((market) => market.id)).toEqual(["germany"]);
   });
 
   it("no longer contains the retired monuments category or mahogany stone", () => {
