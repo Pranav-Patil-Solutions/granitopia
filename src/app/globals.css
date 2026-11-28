@@ -138,6 +138,46 @@ summary:focus-visible {
     0 1px 2px rgba(0, 0, 0, 0.9),
     0 0 16px rgba(0, 0, 0, 0.65);
 }
+.hero-sheen {
+  position: absolute;
+  inset: 0 auto 0 -20%;
+  width: 45%;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 65%
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+  animation: hero-sheen 4.2s ease-in-out both;
+}
+@keyframes hero-sheen {
+  from { transform: translate3d(-30%, 0, 0); }
+  to { transform: translate3d(280%, 0, 0); }
+}
+.hero-finish-in {
+  animation: hero-finish-in 0.7s ease both;
+}
+@keyframes hero-finish-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-spec {
+  animation: hero-spec-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes hero-spec-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.export-arc {
+  animation: export-arc 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes export-arc {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
 .hero-line {
   animation: hero-line-in 0.9s cubic-bezier(0.76, 0, 0.24, 1) both;
   animation-delay: 0.85s;
@@ -162,11 +202,18 @@ html.intro-done .hero-d4 { animation-delay: 0.46s; }
   .hero-ken,
   .hero-progress,
   .hero-line,
-  .hero-cue {
+  .hero-cue,
+  .hero-sheen,
+  .hero-finish-in,
+  .hero-spec,
+  .export-arc {
     animation: none;
     transition: none;
     clip-path: none;
     transform: none;
+  }
+  .hero-sheen {
+    opacity: 0.2;
   }
 }
 

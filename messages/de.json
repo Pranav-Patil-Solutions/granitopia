@@ -23,7 +23,16 @@
     "prev": "Vorheriger Stein",
     "next": "Nächster Stein",
     "pause": "Pause",
-    "play": "Abspielen"
+    "play": "Abspielen",
+    "quote24h": "Angebot in 24 Std.",
+    "catalogue": "Katalog herunterladen",
+    "exportFrom": "Export aus",
+    "exportPlace": "Bengaluru"
+  },
+  "Export": {
+    "title": "Versand aus Bengaluru",
+    "origin": "Bengaluru",
+    "germany": "Deutschland"
   },
   "Stats": {
     "title": "Vom Steinbruch bis zum Container",

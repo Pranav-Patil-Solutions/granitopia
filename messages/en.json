@@ -23,7 +23,16 @@
     "prev": "Previous stone",
     "next": "Next stone",
     "pause": "Pause",
-    "play": "Play"
+    "play": "Play",
+    "quote24h": "Get a quote in 24h",
+    "catalogue": "Download catalogue",
+    "exportFrom": "Export from",
+    "exportPlace": "Bengaluru"
+  },
+  "Export": {
+    "title": "Shipped from Bengaluru",
+    "origin": "Bengaluru",
+    "germany": "Germany"
   },
   "Stats": {
     "title": "A quarry-to-container powerhouse",
